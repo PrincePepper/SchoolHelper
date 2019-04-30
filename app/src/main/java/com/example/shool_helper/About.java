@@ -12,6 +12,7 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_about);
 
+        
 
         /*new Handler().postDelayed(new Runnable() {
             @Override
