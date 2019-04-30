@@ -1,8 +1,8 @@
 package com.example.shool_helper;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
@@ -82,12 +81,13 @@ public class NavigationActivity extends AppCompatActivity
 
 
 
-            if (Splash.color==false) {
+            if (!Splash.color) {
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
                 Splash.color=true;
             } else {
+
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
-                Splash.color=false;;
+                Splash.color=false;
             }
 
             //Intent intent_color = new Intent(NavigationActivity.this,ColorActivity.class);
@@ -99,7 +99,7 @@ public class NavigationActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //Обрабатывать навигацию просмотра элементов кликами здесь.
 
         Fragment fragment = null;

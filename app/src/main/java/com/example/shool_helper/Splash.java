@@ -32,11 +32,16 @@ public static boolean color;
     }
 
     @Override
+    public SharedPreferences getPreferences(int mode) {
+        return super.getPreferences(mode);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        SharedPreferences sharedPreferences = new Splash().getSharedPreferences(Theme, Context.MODE_PRIVATE);
-         booleanTheme = sharedPreferences.getBoolean(Theme, false);
+        /*SharedPreferences sharedPreferences = new Splash().getSharedPreferences(Theme, Context.MODE_PRIVATE);
+         booleanTheme = sharedPreferences.getBoolean(Theme, false);*/
         color=false;
     }
 }
