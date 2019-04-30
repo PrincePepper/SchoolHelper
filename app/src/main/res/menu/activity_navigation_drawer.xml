@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_physics"
+            android:icon="@drawable/ic_menu_physics"
+            android:title="@string/menu_physics" />
+        <item
+            android:id="@+id/nav_inform"
+            android:icon="@drawable/ic_menu_inform"
+            android:title="@string/menu_inform" />
+        <item
+            android:id="@+id/nav_ximia"
+            android:icon="@drawable/ic_menu_ximia"
+            android:title="@string/menu_ximia" />
+
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_about" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_howwork"
+
+                android:title="@string/menu_howwork" />
+        </menu>
+    </item>
+
+</menu>

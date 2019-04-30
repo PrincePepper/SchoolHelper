@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SchoolHelper</string>
+    <string name="app_about">О нас</string>
+    <string name="todo">TODO</string>
+
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Открыть navigation drawer</string>
+    <string name="navigation_drawer_close">Закрыть navigation drawer</string>
+    <string name="nav_header_title">School Helper</string>
+    <string name="nav_header_subtitle">semyon3336@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_color">Смена фона</string>
+
+    <string name="menu_physics">Физика</string>
+    <string name="menu_inform">Информатика</string>
+    <string name="menu_ximia">Химия</string>
+    <string name="menu_about">О нас</string>
+    <string name="menu_howwork">Как работает?(скоро)</string>
+    <string name="communicate">Помошь</string>
+    <string name="switch123">Switch</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
+
+    <string name="str_about">О нас</string>
+    <string name="str_inform">информатика</string>
+    <string name="str_ximia">О нас</string>
+    <string name="str_physics">О нас</string>
+    <string name="str_navigation">School Helper</string>
+
+</resources>
