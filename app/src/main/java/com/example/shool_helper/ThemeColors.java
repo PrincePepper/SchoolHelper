@@ -47,9 +47,7 @@ public class ThemeColors extends AppCompatActivity {
         red = Math.round(red / colorStep) * colorStep;
         green = Math.round(green / colorStep) * colorStep;
         blue = Math.round(blue / colorStep) * colorStep;
-        Log.i(String.valueOf(red), "Это мое сообщение для записи в журнале");
-        Log.i(String.valueOf(green), "Это мое сообщение для записи в журнале");
-        Log.i(String.valueOf(blue), "Это мое сообщение для записи в журнале");
+
          stringColor = Integer.toHexString(Color.rgb(red, green, blue)).substring(2);
         SharedPreferences.Editor editor = activity.getSharedPreferences(NAME, Context.MODE_PRIVATE).edit();
         editor.putString(KEY, stringColor);
