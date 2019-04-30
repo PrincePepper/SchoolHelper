@@ -50,7 +50,7 @@
         <activity
             android:name=".About"
             android:label="@string/app_about"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/AppTheme.About"
 
             android:screenOrientation="sensorPortrait">
             <intent-filter>

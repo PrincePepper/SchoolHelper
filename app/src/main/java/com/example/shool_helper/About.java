@@ -13,7 +13,7 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.intent_about);
 
 
-        new Handler().postDelayed(new Runnable() {
+        /*new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (!Splash.color) {
@@ -24,7 +24,7 @@ public class About extends AppCompatActivity {
                     Splash.color=false;;
                 }
             }
-        }, 2000);
+        }, 2000);*/
 
     }
 }
