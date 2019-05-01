@@ -1,9 +1,9 @@
 package com.example.shool_helper;
 
-import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -14,26 +14,24 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.WindowDecorActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
-import static com.example.shool_helper.Splash.*;
+import static com.example.shool_helper.Splash.color;
 
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String  COLORKEY = "false";
-    SharedPreferences sPref ;
+    private static final String COLORKEY = "false";
+    SharedPreferences sPref;
 
     private NavigationView navigationView;
     private View header;
@@ -51,7 +49,6 @@ public class NavigationActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
@@ -60,16 +57,16 @@ public class NavigationActivity extends AppCompatActivity
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-        header= navigationView.getHeaderView(0);
+        header = navigationView.getHeaderView(0);
 
-        if(color){
+        if (color) {
             header.setBackgroundResource(R.color.colorRed);
-        }else{
+        } else {
             header.setBackgroundResource(R.color.colorBlack);
         }
 
         setTitle("School Helper");
-        sPref  = getPreferences(MODE_PRIVATE);
+        sPref = getPreferences(MODE_PRIVATE);
 
     }
 
@@ -80,9 +77,31 @@ public class NavigationActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
-
+            openQuitDialog();
         }
+    }
+
+
+    private void openQuitDialog() {
+        AlertDialog.Builder quitDialog = new AlertDialog.Builder(NavigationActivity.this);
+        quitDialog.setTitle("Вы уверены, что хотите выйти?");
+
+        quitDialog.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                finish();
+            }
+        });
+
+        quitDialog.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        quitDialog.show();
     }
 
     @Override
@@ -100,10 +119,10 @@ public class NavigationActivity extends AppCompatActivity
 
         int id = item.getItemId();
         if (id == R.id.action_color) {
-            boolean booleanColor= sPref.getBoolean(COLORKEY, false);
-                if(color==booleanColor){
-                    color=!color;
-                }
+            boolean booleanColor = sPref.getBoolean(COLORKEY, false);
+            if (color == booleanColor) {
+                color = !color;
+            }
 
             if (color) {
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
