@@ -1,9 +1,13 @@
 package com.example.shool_helper;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -61,9 +65,12 @@ public class NavigationActivity extends AppCompatActivity
 
         if (color) {
             header.setBackgroundResource(R.color.colorRed);
+
         } else {
             header.setBackgroundResource(R.color.colorBlack);
+
         }
+
 
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
@@ -80,7 +87,6 @@ public class NavigationActivity extends AppCompatActivity
             openQuitDialog();
         }
     }
-
 
     private void openQuitDialog() {
         AlertDialog.Builder quitDialog = new AlertDialog.Builder(NavigationActivity.this);
