@@ -3,6 +3,7 @@ package com.example.shool_helper;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -19,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
@@ -35,6 +37,7 @@ public class NavigationActivity extends AppCompatActivity
 
     private NavigationView navigationView;
     private View header;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,6 +49,7 @@ public class NavigationActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -98,10 +102,8 @@ public class NavigationActivity extends AppCompatActivity
         if (id == R.id.action_color) {
             boolean booleanColor= sPref.getBoolean(COLORKEY, false);
                 if(color==booleanColor){
-                    color=!color; }
-
-
-
+                    color=!color;
+                }
 
             if (color) {
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
@@ -127,18 +129,23 @@ public class NavigationActivity extends AppCompatActivity
         Fragment fragment = null;
 
         int id = item.getItemId();
+        //imageViewItems
 
+
+        ImageView imageView = findViewById(R.id.imageViewItems);
         if (id == R.id.nav_physics) {
             fragment = new PhysicsFragment();
+            imageView.setImageResource(R.mipmap.physics_icon);
         } else if (id == R.id.nav_inform) {
             fragment = new InformFragment();
+            imageView.setImageResource(R.mipmap.inform_icon);
         } else if (id == R.id.nav_ximia) {
             fragment = new XimiaFragment();
+            imageView.setImageResource(R.mipmap.ximia_icon);
         } else if (id == R.id.nav_about) {
             Intent intent_about = new Intent(NavigationActivity.this, About.class);
             startActivity(intent_about);
         } else if (id == R.id.nav_send) {
-
 
         }
 
