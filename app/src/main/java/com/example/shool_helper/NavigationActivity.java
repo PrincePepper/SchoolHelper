@@ -1,6 +1,8 @@
 package com.example.shool_helper;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -11,17 +13,24 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.WindowDecorActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
+import static com.example.shool_helper.Splash.*;
+
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String  COLORKEY = "false";
+    SharedPreferences sPref ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,7 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //WindowDecorActionBar
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -42,8 +52,7 @@ public class NavigationActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setTitle("School Helper");
-
-
+        sPref  = getPreferences(MODE_PRIVATE);
 
     }
 
@@ -72,26 +81,26 @@ public class NavigationActivity extends AppCompatActivity
         // автоматически обрабатывать нажатия на кнопку Home / Up, так долго
         // когда вы указываете родительское действие в AndroidManifest.xml.
 
-
         int id = item.getItemId();
-
-
         if (id == R.id.action_color) {
+            boolean booleanColor= sPref.getBoolean(COLORKEY, false);
+                if(color==booleanColor){
+                    color=!color; }
 
 
 
 
-            if (!Splash.color) {
+            if (color) {
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
-                Splash.color=true;
+                SharedPreferences.Editor ed = sPref.edit();
+                ed.putBoolean(COLORKEY, true);
+                ed.apply();
             } else {
-
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
-                Splash.color=false;
+                SharedPreferences.Editor ed = sPref.edit();
+                ed.putBoolean(COLORKEY, false);
+                ed.apply();
             }
-
-            //Intent intent_color = new Intent(NavigationActivity.this,ColorActivity.class);
-            //startActivity(intent_color);
         }
 
         return true;

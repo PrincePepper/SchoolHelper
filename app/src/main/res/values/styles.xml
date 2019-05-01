@@ -2,14 +2,14 @@
 
 
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">#FF2D2D</item>
+        <item name="colorPrimary">#c83232</item>
         <item name="colorPrimaryDark">#B71C1C</item>
         <item name="colorAccent">#FA3232</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
-    <style name="AppThemeDarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">#FF2D2D</item>
+    <style name="AppThemeDarkActionBar" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#c83232</item>
         <item name="colorPrimaryDark">#B71C1C</item>
         <item name="colorAccent">#000000</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
@@ -31,7 +31,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme.About" parent="Theme.AppCompat.Light.DarkActionBar" >
-        <item name="colorPrimary">#FF2D2D</item>
+        <item name="colorPrimary">#c83232</item>
         <item name="colorPrimaryDark">#B71C1C</item>
         <item name="colorAccent">#000000</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>

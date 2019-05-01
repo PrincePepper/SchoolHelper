@@ -10,8 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 
 public class Splash extends AppCompatActivity {
 public static boolean color;
-    private static final String Theme = "Theme";
-    public static boolean booleanTheme;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

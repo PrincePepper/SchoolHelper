@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 public class ThemeColors extends AppCompatActivity {
 
@@ -31,7 +30,7 @@ public class ThemeColors extends AppCompatActivity {
     }
     public ThemeColors(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(NAME, Context.MODE_PRIVATE);
-        String stringColor = sharedPreferences.getString(KEY, "FA3232");
+        String stringColor = sharedPreferences.getString(KEY, "c83232");
         color = Color.parseColor("#" + stringColor);
 
         if (isLightActionBar()) context.setTheme(R.style.AppTheme);
@@ -56,6 +55,7 @@ public class ThemeColors extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
         else {
             Intent i = activity.getPackageManager().getLaunchIntentForPackage(activity.getPackageName());
+            assert i != null;
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             activity.startActivity(i);
         }
