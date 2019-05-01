@@ -17,6 +17,7 @@ import android.support.v7.app.WindowDecorActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
@@ -32,6 +33,8 @@ public class NavigationActivity extends AppCompatActivity
     private static final String  COLORKEY = "false";
     SharedPreferences sPref ;
 
+    private NavigationView navigationView;
+    private View header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,16 +43,26 @@ public class NavigationActivity extends AppCompatActivity
         new ThemeColors(this);
 
         setContentView(R.layout.activity_navigation);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //WindowDecorActionBar
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         navigationView.setNavigationItemSelectedListener(this);
+        header= navigationView.getHeaderView(0);
+
+        if(color){
+            header.setBackgroundResource(R.color.colorRed);
+        }else{
+            header.setBackgroundResource(R.color.colorBlack);
+        }
 
         setTitle("School Helper");
         sPref  = getPreferences(MODE_PRIVATE);

@@ -7,4 +7,7 @@
     <color name="splash">#FFFFFF</color>
 
     <color name="navigation">#DCDCDC</color>
+
+    <color name="colorRed">#c83232</color>
+    <color name="colorBlack">#363636</color>
 </resources>
