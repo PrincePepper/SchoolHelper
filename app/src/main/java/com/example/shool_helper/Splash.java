@@ -1,6 +1,5 @@
 package com.example.shool_helper;
 
-import android.content.Context;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
@@ -9,8 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class Splash extends AppCompatActivity {
-public static boolean color;
 
+    public static boolean color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +25,15 @@ public static boolean color;
                 Splash.this.startActivity(SplashIntent);
                 Splash.this.finish();
 
-
             }
         }, SPLASH_DISPLAY);
-    }
 
-    @Override
-    public SharedPreferences getPreferences(int mode) {
-        return super.getPreferences(mode);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        /*SharedPreferences sharedPreferences = new Splash().getSharedPreferences(Theme, Context.MODE_PRIVATE);
-         booleanTheme = sharedPreferences.getBoolean(Theme, false);*/
         color=false;
     }
 }
