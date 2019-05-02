@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 public class Splash extends AppCompatActivity {
 
     public static boolean color;
+    public static boolean picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +36,6 @@ public class Splash extends AppCompatActivity {
         super.onDestroy();
 
         color=false;
+        picture=false;
     }
 }

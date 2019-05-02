@@ -25,6 +25,7 @@ import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
 import static com.example.shool_helper.Splash.color;
+import static com.example.shool_helper.Splash.picture;
 
 
 public class NavigationActivity extends AppCompatActivity
@@ -32,7 +33,7 @@ public class NavigationActivity extends AppCompatActivity
 
     private static final String COLORKEY = "false";
     public static final String PICTURE = "picture";
-    SharedPreferences sPref;
+    public static  SharedPreferences sPref;
 
     public boolean booleanColor;
 
@@ -67,7 +68,13 @@ public class NavigationActivity extends AppCompatActivity
 
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
+        if(!picture){
+            picture=true;
+            SharedPreferences.Editor ed = sPref.edit();
+            ed.putInt(PICTURE, 0);
+            ed.apply();
 
+        }
     }
 
 
@@ -110,14 +117,14 @@ public class NavigationActivity extends AppCompatActivity
         imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
         switch (picture) {
-            case 0: imageView.setImageResource(R.mipmap.logo);break;
-            case 1: imageView.setImageResource(R.mipmap.physics_icon);break;
+            case 0:imageView.setImageResource(R.mipmap.logo);break;
+            case 1:imageView.setImageResource(R.mipmap.physics_icon);break;
             case 2:imageView.setImageResource(R.mipmap.inform_icon);break;
             case 3:imageView.setImageResource(R.mipmap.ximia_icon);break;
-
         }
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
+
         if (color == booleanColor) {
             color = !color;
         }
@@ -170,8 +177,6 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         SharedPreferences.Editor ed = sPref.edit();
-        ed.putInt(PICTURE, 0);
-        ed.apply();
 
 
         ImageView imageView = findViewById(R.id.imageViewItems);
