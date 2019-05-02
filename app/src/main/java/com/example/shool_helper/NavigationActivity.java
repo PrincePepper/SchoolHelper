@@ -110,7 +110,7 @@ public class NavigationActivity extends AppCompatActivity
         imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
         switch (picture) {
-            case 0: imageView.setImageResource(R.mipmap.ic_launcher_round);break;
+            case 0: imageView.setImageResource(R.mipmap.logo);break;
             case 1: imageView.setImageResource(R.mipmap.physics_icon);break;
             case 2:imageView.setImageResource(R.mipmap.inform_icon);break;
             case 3:imageView.setImageResource(R.mipmap.ximia_icon);break;
