@@ -37,9 +37,7 @@ public class NavigationActivity extends AppCompatActivity
 
     public boolean booleanColor;
 
-    private NavigationView navigationView;
     private View header;
-    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public class NavigationActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -114,13 +112,17 @@ public class NavigationActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         //Раздувать меню; это добавляет элементы в панель действий, если она присутствует.
 
-        imageView = findViewById(R.id.imageViewItems);
+        ImageView imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
         switch (picture) {
-            case 0:imageView.setImageResource(R.mipmap.logo);break;
-            case 1:imageView.setImageResource(R.mipmap.physics_icon);break;
-            case 2:imageView.setImageResource(R.mipmap.inform_icon);break;
-            case 3:imageView.setImageResource(R.mipmap.ximia_icon);break;
+            case 0:
+                imageView.setImageResource(R.mipmap.logo);break;
+            case 1:
+                imageView.setImageResource(R.mipmap.physics_icon);break;
+            case 2:
+                imageView.setImageResource(R.mipmap.inform_icon);break;
+            case 3:
+                imageView.setImageResource(R.mipmap.ximia_icon);break;
         }
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
