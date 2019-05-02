@@ -32,7 +32,7 @@ public class NavigationActivity extends AppCompatActivity
 
     private static final String COLORKEY = "false";
     public static final String PICTURE = "picture";
-    public SharedPreferences sPref;
+    SharedPreferences sPref;
 
     public boolean booleanColor;
 
@@ -116,6 +116,7 @@ public class NavigationActivity extends AppCompatActivity
             case 3:imageView.setImageResource(R.mipmap.ximia_icon);break;
 
         }
+
         booleanColor = sPref.getBoolean(COLORKEY, true);
         if (color == booleanColor) {
             color = !color;
@@ -138,6 +139,7 @@ public class NavigationActivity extends AppCompatActivity
 
         int id = item.getItemId();
         if (id == R.id.action_color) {
+
              booleanColor = sPref.getBoolean(COLORKEY, false);
             if (color == booleanColor) {
                 color = !color;
