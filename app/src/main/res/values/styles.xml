@@ -30,7 +30,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AppTheme.About" parent="Theme.AppCompat.Light.DarkActionBar" >
+    <style name="AppTheme.About" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">#c83232</item>
         <item name="colorPrimaryDark">#B71C1C</item>
         <item name="colorAccent">#000000</item>
