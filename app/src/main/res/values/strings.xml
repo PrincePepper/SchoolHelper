@@ -18,7 +18,7 @@
     <string name="menu_about">О нас</string>
     <string name="menu_howwork">Как работает?(скоро)</string>
     <string name="communicate">Помошь</string>
-    <string name="switch123">Switch</string>
+
     <string name="button">Button</string>
     <string name="textview">TextView</string>
 
@@ -30,6 +30,9 @@
     <string name="title_activity_tabbled">TabbledActivity</string>
     <string name="tab_text_1">Расчёт</string>
     <string name="tab_text_2">Решение</string>
+
+    <string name="button1">РАСЧЕТ</string>
+    <string name="button2">РЕШЕНИЕ</string>
 
 
 </resources>
