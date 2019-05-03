@@ -187,6 +187,7 @@ public class NavigationActivity extends AppCompatActivity
         ImageView imageView = findViewById(R.id.imageViewItems);
         if (id == R.id.nav_physics) {
             fragment = new PhysicsFragment();
+            fragment = new PaymentFragment();
             imageView.setImageResource(R.mipmap.physics_icon);
 
             ed.putInt(PICTURE, 1);

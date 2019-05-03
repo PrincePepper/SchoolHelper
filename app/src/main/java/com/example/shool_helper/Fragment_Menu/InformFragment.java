@@ -42,7 +42,7 @@ public class InformFragment extends Fragment {
 
         Adapter adapter = new Adapter(getChildFragmentManager());
 
-        adapter.addFragment(new PaymentFragment(), "РАСЧЕТ");
+        //adapter.addFragment(new PaymentFragment(), "РАСЧЕТ");
         //adapter.addFragment(new MyTeamsFixturesFragment(), "РЕШЕНИЕ");
         viewPager.setAdapter(adapter);
 
