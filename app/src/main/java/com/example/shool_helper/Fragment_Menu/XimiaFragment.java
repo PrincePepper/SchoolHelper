@@ -1,6 +1,8 @@
 package com.example.shool_helper.Fragment_Menu;
 
 
+import android.annotation.SuppressLint;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,9 +17,10 @@ import java.util.Objects;
 public class XimiaFragment extends Fragment {
 
 
+    @SuppressLint("InflateParams")
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Objects.requireNonNull(getActivity()).setTitle("Химия");
         return inflater.inflate(R.layout.fragment_ximia, null);
     }

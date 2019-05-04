@@ -21,7 +21,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.shool_helper.Fragment_Menu.InformFragment;
-import com.example.shool_helper.Fragment_Menu.PaymentFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
@@ -46,8 +45,6 @@ public class NavigationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new ThemeColors(this);
-
-
 
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
@@ -188,7 +185,6 @@ public class NavigationActivity extends AppCompatActivity
         ImageView imageView = findViewById(R.id.imageViewItems);
         if (id == R.id.nav_physics) {
             fragment = new PhysicsFragment();
-
             imageView.setImageResource(R.mipmap.physics_icon);
 
             ed.putInt(PICTURE, 1);
