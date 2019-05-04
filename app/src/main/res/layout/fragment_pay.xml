@@ -4,13 +4,80 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/input_number"
+                android:layout_width="139dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/input_number"
+                android:textAlignment="textEnd" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="257dp"
+                android:layout_height="40dp"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/number_system"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="@string/number_system"
+                android:textAlignment="textEnd" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/transfer"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="@string/transfer"
+                android:textAlignment="textEnd"/>
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </TableRow>
+
+    </TableLayout>
+
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Фрагмент расчёта"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:layout_margin="5dp"/>
+        android:text="@string/result"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

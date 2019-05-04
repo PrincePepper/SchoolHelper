@@ -17,26 +17,17 @@ import com.example.shool_helper.R;
 
 public class InformFragment extends Fragment {
 
-
     private Button btnPayment, btnDecision;
-
     //Фрагменты для отображения на экране
     private PaymentFragment paymentFragment;
     private DecisionFragment fragmentDecision;
 
-
-    /*
-    "Инструмены" необходимые для отображения
-    child фрагментов
-     */
-
+    //"Инструмены" необходимые для отображения child фрагментов
     private FragmentTransaction fChildTransactions;
     private FragmentManager fChildManager;
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_inform, container, false);
 
         initializeFragments();
@@ -70,7 +61,6 @@ public class InformFragment extends Fragment {
     }
 
     private void setPaymentFragment() {
-
         //Менеджеру даём именно child manager
         fChildManager = getChildFragmentManager();
 

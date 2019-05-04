@@ -27,11 +27,33 @@
     <string name="str_ximia">О нас</string>
     <string name="str_physics">О нас</string>
     <string name="str_navigation">School Helper</string>
-    <string name="title_activity_tabbled">TabbledActivity</string>
-    <string name="tab_text_1">Расчёт</string>
-    <string name="tab_text_2">Решение</string>
+
     <string name="button_pay">Расчёт</string>
     <string name="button_decision">Решение</string>
+
+    <string name="input_number">Введите число:</string>
+
+    <string name="number_system">Его система счисления</string>
+    <string name="transfer">Перевести в</string>
+    <string name="result">РЕЗУЛЬТАТ</string>
+    <string-array name="numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
 
 
 </resources>
