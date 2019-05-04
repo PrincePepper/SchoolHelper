@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,14 +29,12 @@ import static com.example.shool_helper.Splash.color;
 import static com.example.shool_helper.Splash.picture;
 
 
-
-
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String COLORKEY = "false";
     public static final String PICTURE = "picture";
-    public static  SharedPreferences sPref;
+    public static SharedPreferences sPref;
 
     public boolean booleanColor;
 
@@ -67,8 +66,8 @@ public class NavigationActivity extends AppCompatActivity
 
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
-        if(!picture){
-            picture=true;
+        if (!picture) {
+            picture = true;
             SharedPreferences.Editor ed = sPref.edit();
             ed.putInt(PICTURE, 0);
             ed.apply();
@@ -87,43 +86,46 @@ public class NavigationActivity extends AppCompatActivity
         }
     }
 
+    //Вызов меню выхода из приложения
     private void openQuitDialog() {
+        //Сообщение о выходе
         AlertDialog.Builder quitDialog = new AlertDialog.Builder(NavigationActivity.this);
         quitDialog.setTitle("Вы уверены, что хотите выйти?");
-
-        quitDialog.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-                finish();
-            }
+        //Кнопка "ДА"
+        quitDialog.setPositiveButton("ДА", (dialog, which) -> {
+            // TODO Auto-generated method stub
+            finish();
         });
-
-        quitDialog.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-            }
+        //Кнопка "НЕТ"
+        quitDialog.setNegativeButton("НЕТ", (dialog, which) -> {
+            // TODO Auto-generated method stub
         });
 
         quitDialog.show();
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //Раздувать меню; это добавляет элементы в панель действий, если она присутствует.
+        //Это добавляет элементы в панель действий, если она присутствует.
+        //Обновляется 1 раз за цикл
 
         ImageView imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
+        //Выставление соответсвуещей иконки выбранному меню
         switch (picture) {
             case 0:
-                imageView.setImageResource(R.mipmap.logo);break;
+                imageView.setImageResource(R.mipmap.logo);
+                break;
             case 1:
-                imageView.setImageResource(R.mipmap.physics_icon);break;
+                imageView.setImageResource(R.mipmap.physics_icon);
+                break;
             case 2:
-                imageView.setImageResource(R.mipmap.inform_icon);break;
+                imageView.setImageResource(R.mipmap.inform_icon);
+                break;
             case 3:
-                imageView.setImageResource(R.mipmap.ximia_icon);break;
+                imageView.setImageResource(R.mipmap.ximia_icon);
+                break;
         }
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
@@ -150,7 +152,7 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
         if (id == R.id.action_color) {
 
-             booleanColor = sPref.getBoolean(COLORKEY, false);
+            booleanColor = sPref.getBoolean(COLORKEY, false);
             if (color == booleanColor) {
                 color = !color;
             }
@@ -174,6 +176,7 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //Обрабатывать навигацию просмотра элементов кликами здесь.
+        //Здесь происходит открытие фрагментов окон
 
         Fragment fragment = null;
 

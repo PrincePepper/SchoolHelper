@@ -30,6 +30,8 @@
     <string name="title_activity_tabbled">TabbledActivity</string>
     <string name="tab_text_1">Расчёт</string>
     <string name="tab_text_2">Решение</string>
+    <string name="button_pay">Расчёт</string>
+    <string name="button_decision">Решение</string>
 
 
 </resources>
