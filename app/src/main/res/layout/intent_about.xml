@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/splash"
     android:orientation="vertical"
-    tools:context=".About"
 
-    android:background="@color/splash">
+    tools:context=".About">
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="71dp"
-        app:srcCompat="@drawable/school_helper"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/school_helper" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -22,19 +22,40 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/about_information"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/about_information"
-                android:contentDescription="@string/todo"/>
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/about_information" />
 
             <TextView
-
                 android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/about_instagram"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/about_instagram" />
+
+            <TextView
+                android:id="@+id/instagram"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_weight="1"
@@ -45,68 +66,46 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:id="@+id/about_instagram"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                app:srcCompat="@mipmap/about_instagram"
-                android:contentDescription="@string/todo" />
-
-            <TextView
-                android:id="@+id/instagram"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/about_telegram"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/about_telegram"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/about_telegram" />
 
             <TextView
                 android:id="@+id/telegram"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_weight="1"
+                android:textAlignment="textStart"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/about_github"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/about_github"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/about_github" />
 
             <TextView
                 android:id="@+id/github"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_weight="1"
+                android:textAlignment="textStart"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:textAlignment="textStart"/>
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 
