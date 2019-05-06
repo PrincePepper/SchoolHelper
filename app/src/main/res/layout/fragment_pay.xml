@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,14 +9,11 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TableRow
             android:layout_width="272dp"
             android:layout_height="match_parent">
-
-
             <TextView
-                android:id="@+id/input_number"
+                android:id="@+id/pay_textview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
@@ -27,11 +25,15 @@
             <EditText
                 android:id="@+id/editText"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/number"
                 android:inputType="number"
                 android:imeOptions="actionDone"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_marginEnd="5dp"
+                android:autofillHints=""
+                tools:ignore="UnusedAttribute" />
+
 
         </TableRow>
 
@@ -40,7 +42,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/number_system"
+                android:id="@+id/pay_textview2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/number_system"
@@ -61,7 +63,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/transfer"
+                android:id="@+id/pay_textview3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/transfer"
@@ -80,7 +82,7 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/pay_textview4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -92,7 +94,7 @@
         android:textStyle="italic" />
 
     <Button
-        android:id="@+id/button_inform"
+        android:id="@+id/button_pay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rectract"
@@ -104,6 +106,8 @@
         android:layout_height="wrap_content"
         android:textColor="?attr/colorPrimary"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
 
 </LinearLayout>

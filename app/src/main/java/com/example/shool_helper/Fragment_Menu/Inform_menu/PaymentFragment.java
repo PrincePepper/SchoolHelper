@@ -24,8 +24,8 @@ import java.util.Objects;
 
 public class PaymentFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    String choose1, choose2, strnumber;
-    int chooseint_1, chooseint_2;
+    public static String choose1, choose2, strnumber, result;
+    public static int chooseint_1, chooseint_2;
 
     @SuppressLint("InflateParams")
     @Nullable
@@ -41,7 +41,7 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
         Spinner spinner2 = Objects.requireNonNull(getActivity()).findViewById(R.id.spinner2);
         TextView textView = getActivity().findViewById(R.id.result);
         EditText editText = getActivity().findViewById(R.id.editText);
-        Button button_inform = getActivity().findViewById(R.id.button_inform);
+        Button button_inform = getActivity().findViewById(R.id.button_pay);
 
         ArrayAdapter<?> adapter1 = ArrayAdapter.createFromResource(Objects.requireNonNull(getContext()), R.array.spinner_numbers_1, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -74,16 +74,18 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+        editText.setText("8");
+
+        strnumber = editText.getText().toString();
 
         button_inform.setOnClickListener(v -> {
             if (editText.getText().length() != 0) {
                 strnumber = editText.getText().toString();
-                //Toast toast = Toast.makeText(getContext(), "Ваш выбор: " + strnumber, Toast.LENGTH_SHORT);toast.show();
                 chooseint_1 = Integer.parseInt(choose1);
                 chooseint_2 = Integer.parseInt(choose2);
                 BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
-                String c = b.toString();
-                textView.setText(c);
+                result = b.toString();
+                textView.setText(result);
             } else {
                 Toast toast = Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT);
                 toast.show();
