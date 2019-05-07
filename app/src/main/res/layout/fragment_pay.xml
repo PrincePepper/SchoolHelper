@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow
-            android:layout_width="272dp"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/pay_textview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:layout_weight="0"
                 android:text="@string/input_number"
                 android:textAlignment="textEnd"
@@ -26,54 +26,54 @@
                 android:id="@+id/editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/number"
-                android:inputType="number"
-                android:imeOptions="actionDone"
-                android:textSize="16sp"
                 android:layout_marginEnd="5dp"
-                android:autofillHints=""
-                tools:ignore="UnusedAttribute" />
+                android:hint="@string/number"
+                android:imeOptions="actionDone"
+                android:inputType="number|textMultiLine"
+                android:maxLength="25"
+                android:maxLines="4"
+                android:textSize="16sp" />
 
 
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/pay_textview2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/number_system"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
 
             <Spinner
                 android:id="@+id/spinner1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:spinnerMode="dialog"
                 android:textSize="16sp"
                 />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/pay_textview3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/transfer"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
 
             <Spinner
                 android:id="@+id/spinner2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:spinnerMode="dialog"
                 android:textSize="16sp" />
 
