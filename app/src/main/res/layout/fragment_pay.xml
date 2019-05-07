@@ -24,14 +24,12 @@
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="wrap_content"
+                android:layout_width="234dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:hint="@string/number"
-                android:imeOptions="actionDone"
-                android:inputType="number|textMultiLine"
-                android:maxLength="25"
-                android:maxLines="4"
+                android:inputType="textMultiLine"
+
                 android:textSize="16sp" />
 
 
@@ -51,11 +49,10 @@
 
             <Spinner
                 android:id="@+id/spinner1"
-                android:layout_width="wrap_content"
+                android:layout_width="195dp"
                 android:layout_height="wrap_content"
                 android:spinnerMode="dialog"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow

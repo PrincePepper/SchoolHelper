@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.shool_helper.R;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
 
@@ -83,8 +84,15 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                 strnumber = editText.getText().toString();
                 chooseint_1 = Integer.parseInt(choose1);
                 chooseint_2 = Integer.parseInt(choose2);
-                BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
-                result = b.toString();
+                if(chooseint_2==16){
+                    BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
+                    result = b.toString();
+                    result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
+
+                }else {
+                    BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
+                    result = b.toString();
+                }
                 textView.setText(result);
             } else {
                 Toast toast = Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT);
