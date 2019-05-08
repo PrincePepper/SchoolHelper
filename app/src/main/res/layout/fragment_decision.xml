@@ -32,8 +32,20 @@
         android:id="@+id/decision_textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Writingtheresultingnumbers"
         android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/decision_textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/decision_textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textColor="@color/colorBlack"/>
     <TextView

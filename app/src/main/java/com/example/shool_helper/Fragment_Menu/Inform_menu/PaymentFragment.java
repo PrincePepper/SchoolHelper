@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class PaymentFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    public static String choose1, choose2, strnumber,resultend;
+    public static String choose1, choose2, strnumber,resultend,subtotal;
     public static int chooseint_1, chooseint_2,result;
 
     @SuppressLint("InflateParams")
@@ -115,7 +115,8 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                 if (start == 1) {
                     if (chooseint_2 != 16) {
                         BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
-                        BigInteger c = new BigInteger(new BigInteger(b.toString()).toString(chooseint_2), 10);
+                        subtotal=b.toString();
+                        BigInteger c = new BigInteger(new BigInteger(subtotal).toString(chooseint_2), 10);
                          result = c.intValue();
                         resultend= String.format(getString(R.string.string_locale), result);
                     } else {

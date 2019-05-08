@@ -30,7 +30,6 @@
     <string name="result">РЕЗУЛЬТАТ</string>
     <string name="number">жду числа</string>
     <string name="rectract">Перевести</string>
-    <string name="Writingtheresultingnumbers">Записав полученные цифры в ряд снизу вверх, получим:</string>
     <string name="string_locale">%,d</string>
     <string-array name="spinner_numbers_1">
         <item>2</item>
