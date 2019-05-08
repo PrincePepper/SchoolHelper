@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,6 @@ import android.widget.Toast;
 
 import com.example.shool_helper.R;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
 
@@ -52,11 +50,11 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
 
         spinner1.setAdapter(adapter1);
         spinner1.setOnItemSelectedListener(PaymentFragment.this);
-        spinner1.setSelection(9);
+
 
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(PaymentFragment.this);
-        spinner2.setSelection(1);
+
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View itemSelected, int selectedItemPosition, long selectedId) {
@@ -75,42 +73,77 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        editText.setText("8");
 
-        strnumber = editText.getText().toString();
 
         button_inform.setOnClickListener(v -> {
             if (editText.getText().length() != 0) {
+                int start = 1;
                 strnumber = editText.getText().toString();
                 chooseint_1 = Integer.parseInt(choose1);
                 chooseint_2 = Integer.parseInt(choose2);
-                if(chooseint_2==16){
-                    BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
-                    result = b.toString();
-                    result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
-
-                }else {
-                    BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
-                    result = b.toString();
+                for (int i = 0; i < strnumber.length(); i++) {
+                    char chars = strnumber.charAt(0);
+                    if (chooseint_1 == 2 && chars > '1') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 3 && chars > '2') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 4 && chars > '3') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 5 && chars > '4') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 6 && chars > '5') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 7 && chars > '6') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 8 && chars > '7') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 9 && chars > '8') {
+                        start = 0;
+                        break;
+                    } else if (chooseint_1 == 10 && chars > '9') {
+                        start = 0;
+                        break;
+                    }
                 }
-                textView.setText(result);
+
+                if (start == 1) {
+                    if (chooseint_2 == 16) {
+
+                        BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
+                        result = b.toString();
+                        result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
+
+                    } else {
+                        BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
+                        result = b.toString();
+                    }
+
+                    textView.setText(result);
+                } else {
+                    Toast.makeText(getContext(), "Неправильно выбрана система счисления числа", Toast.LENGTH_SHORT).show();
+                }
             } else {
-                Toast toast = Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT);
-                toast.show();
+
+                Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT).show();
             }
 
-        });
 
+        });
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }
 
