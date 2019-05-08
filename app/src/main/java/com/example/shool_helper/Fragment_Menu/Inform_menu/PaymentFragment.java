@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +75,6 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
             }
         });
 
-
         button_inform.setOnClickListener(v -> {
             if (editText.getText().length() != 0) {
                 int start = 1;
@@ -115,11 +115,13 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
 
                 if (start == 1) {
                     if (chooseint_2 == 16) {
-
-                        BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
-                        result = b.toString();
-                        result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
-
+                        if(strnumber.length()>31){
+                            Toast.makeText(getContext(), "Превышен лимит символов", Toast.LENGTH_SHORT).show();
+                        }else{
+                            BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
+                            result = b.toString();
+                            result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
+                        }
                     } else {
                         BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
                         result = b.toString();
