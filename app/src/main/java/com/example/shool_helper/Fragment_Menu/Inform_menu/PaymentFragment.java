@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +23,8 @@ import java.util.Objects;
 
 public class PaymentFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    public static String choose1, choose2, strnumber, result;
-    public static int chooseint_1, chooseint_2;
+    public static String choose1, choose2, strnumber,resultend;
+    public static int chooseint_1, chooseint_2,result;
 
     @SuppressLint("InflateParams")
     @Nullable
@@ -81,53 +80,55 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                 strnumber = editText.getText().toString();
                 chooseint_1 = Integer.parseInt(choose1);
                 chooseint_2 = Integer.parseInt(choose2);
+
                 for (int i = 0; i < strnumber.length(); i++) {
-                    char chars = strnumber.charAt(0);
-                    if (chooseint_1 == 2 && chars > '1') {
+
+                    char chars = strnumber.charAt(i);
+
+                    if (chooseint_1 == 2 && chars >= '2') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 3 && chars > '2') {
+                    } else if (chooseint_1 == 3 && chars >= '3') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 4 && chars > '3') {
+                    } else if (chooseint_1 == 4 && chars >= '4') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 5 && chars > '4') {
+                    } else if (chooseint_1 == 5 && chars >= '5') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 6 && chars > '5') {
+                    } else if (chooseint_1 == 6 && chars >= '6') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 7 && chars > '6') {
+                    } else if (chooseint_1 == 7 && chars >= '7') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 8 && chars > '7') {
+                    } else if (chooseint_1 == 8 && chars >= '8') {
                         start = 0;
                         break;
-                    } else if (chooseint_1 == 9 && chars > '8') {
-                        start = 0;
-                        break;
-                    } else if (chooseint_1 == 10 && chars > '9') {
+                    } else if (chooseint_1 == 9 && chars >= '9') {
                         start = 0;
                         break;
                     }
                 }
 
                 if (start == 1) {
-                    if (chooseint_2 == 16) {
-                        if(strnumber.length()>31){
-                            Toast.makeText(getContext(), "Превышен лимит символов", Toast.LENGTH_SHORT).show();
-                        }else{
-                            BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
-                            result = b.toString();
-                            result = Integer.toHexString(Integer.parseInt(result)).toUpperCase();
-                        }
+                    if (chooseint_2 != 16) {
+                        BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
+                        BigInteger c = new BigInteger(new BigInteger(b.toString()).toString(chooseint_2), 10);
+                         result = c.intValue();
+                        resultend= String.format(getString(R.string.string_locale), result);
                     } else {
-                        BigInteger b = new BigInteger(new BigInteger(strnumber).toString(chooseint_2), chooseint_1);
-                        result = b.toString();
-                    }
+                        if (strnumber.length() > 28) {
+                            Toast.makeText(getContext(), "Превышен лимит символов", Toast.LENGTH_SHORT).show();
+                        } else {
+                            BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
+                            result = b.intValue();
+                            resultend = Integer.toHexString(result).toUpperCase();
+                        }
 
-                    textView.setText(result);
+                    }
+                    textView.setText(resultend);
                 } else {
                     Toast.makeText(getContext(), "Неправильно выбрана система счисления числа", Toast.LENGTH_SHORT).show();
                 }
@@ -135,7 +136,6 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
 
                 Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT).show();
             }
-
 
         });
     }
