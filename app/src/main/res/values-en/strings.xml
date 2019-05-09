@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">School Helper</string>
 
-    <string name="app_about">О нас</string>
+    <string name="app_about">About Us</string>
     <string name="todo">TODO</string>
 
     <string name="title_activity_navigation">NavigationActivity</string>
@@ -30,8 +30,8 @@
     <string name="fragment_physics">Physics</string>
     <string name="fragment_ximia">Chemistry</string>
 
-    <string name="button_pay">Расчёт</string>
-    <string name="button_decision">Payment</string>
+    <string name="button_pay">Payment</string>
+    <string name="button_decision">Decision</string>
 
     <string name="enter_the_number">Enter the number so that no error occurs.</string>
     <string name="incorrect_number">Incorrect number system</string>
@@ -75,13 +75,13 @@
         <item>16</item>
     </string-array>
     <string name="arrow"><![CDATA[—>]]></string>
-    <string name="decimal_number_system">to decimal number system:</string>
-    <string name="give_the_integer_part">We give the integer part of the number</string>
-    <string name="in_number_systems">in the numeral system</string>
-    <string name="number_systems">from the number system</string>
+    <string name="decimal_number_system">" to decimal number system:"</string>
+    <string name="give_the_integer_part">"We give the integer part of the number "</string>
+    <string name="in_number_systems">" in the numeral system "</string>
+    <string name="number_systems">" from the number system "</string>
     <string name="point">.</string>
-    <string name="successive_division_by_number">successive division by number</string>
-    <string name="will_give">Will give</string>
+    <string name="successive_division_by_number">" successive division by number "</string>
+    <string name="will_give">"Will give "</string>
     <string name="writing_the_result">Writing the resulting numbers in a row from the bottom up, we get:</string>
 
 

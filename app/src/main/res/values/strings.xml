@@ -11,7 +11,7 @@
 
     <string name="are_you_sure">Вы уверены, что хотите выйти?</string>
     <string name="yes">ДА</string>
-    <string name="no">НЕТ</string>
+    <string name="no" translatable="false">НЕТ</string>
 
     <string name="nav_header_title">School Helper</string>
     <string name="nav_header_subtitle">semyon3336@gmail.com</string>

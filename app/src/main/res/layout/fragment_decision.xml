@@ -45,7 +45,5 @@
         android:id="@+id/decision_textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorRed"
-        android:textSize="20sp"
         android:layout_marginStart="5dp"/>
 </LinearLayout>
