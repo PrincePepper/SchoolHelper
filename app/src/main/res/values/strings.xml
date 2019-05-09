@@ -17,7 +17,7 @@
     <string name="menu_inform">Информатика</string>
     <string name="menu_ximia">Химия</string>
     <string name="menu_about">О нас</string>
-    <string name="menu_howwork">Как работает?(скоро)</string>
+    <string name="menu_howwork">Как работает?</string>
     <string name="communicate">Помошь</string>
 
     <string name="button_pay">Расчёт</string>
@@ -31,7 +31,11 @@
     <string name="number">жду числа</string>
     <string name="rectract">Перевести</string>
     <string name="string_locale">%,d</string>
+
     <string name="Hello">Привет!</string>
+    <string name="do_svayp">Сделай \'Свайп\' вправо и начинай роботать :)</string>
+    <string name="thank_you_for_downloading_our_application">Спасибо, что скачали наше приложение. \nВЫ сможете воспользоваться:\n       1. Словарем формул по физике\n       2. Балансировка химических реакций\n       3. Перевод чисел из разных систем счисления с подробным пояснением</string>
+
     <string-array name="spinner_numbers_1">
         <item>2</item>
         <item>3</item>
@@ -56,5 +60,4 @@
         <item>10</item>
         <item>16</item>
     </string-array>
-
 </resources>
