@@ -30,7 +30,7 @@ public class InformFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Objects.requireNonNull(getActivity()).setTitle("Информатика");
+        Objects.requireNonNull(getActivity()).setTitle(R.string.fragment_inform);
         View view = inflater.inflate(R.layout.fragment_inform, container, false);
 
         initializeFragments();

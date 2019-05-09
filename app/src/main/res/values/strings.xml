@@ -8,6 +8,8 @@
 
     <string name="navigation_drawer_open">Открыть navigation drawer</string>
     <string name="navigation_drawer_close">Закрыть navigation drawer</string>
+    <string name="are_you_sure">Вы уверены, что хотите выйти?</string>
+
     <string name="nav_header_title">School Helper</string>
     <string name="nav_header_subtitle">semyon3336@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -19,6 +21,11 @@
     <string name="menu_about">О нас</string>
     <string name="menu_howwork">Как работает?</string>
     <string name="communicate">Помошь</string>
+
+    <string name="fragment_greeting">Приветствие</string>
+    <string name="fragment_inform">Информатика</string>
+    <string name="fragment_physics">Физика</string>
+    <string name="fragment_ximia">Химия</string>
 
     <string name="button_pay">Расчёт</string>
     <string name="button_decision">Решение</string>

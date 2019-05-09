@@ -21,14 +21,13 @@ public class PhysicsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        Objects.requireNonNull(getActivity()).setTitle("Физика");
+        Objects.requireNonNull(getActivity()).setTitle(R.string.fragment_physics);
         return inflater.inflate(R.layout.fragment_physics, null);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
 
 
     }

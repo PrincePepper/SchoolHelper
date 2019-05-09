@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.widget.TextView;
 
 
@@ -16,10 +15,10 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.intent_about);
 
         //находим TextView
-        TextView email=findViewById(R.id.email);
-        TextView instagram=findViewById(R.id.instagram);
-        TextView telegram=findViewById(R.id.telegram);
-        TextView github=findViewById(R.id.github);
+        TextView email = findViewById(R.id.email);
+        TextView instagram = findViewById(R.id.instagram);
+        TextView telegram = findViewById(R.id.telegram);
+        TextView github = findViewById(R.id.github);
 
 //Экранируем кавычки в атрибуте html тега слэшем:
         String textWithLink_email = "<a href=\"semyon3336@gmail.com\">Email</a>";
@@ -52,13 +51,17 @@ public class About extends AppCompatActivity {
         CharSequence text2 = instagram.getText();
         CharSequence text3 = telegram.getText();
         CharSequence text4 = github.getText();
-        if (text1 instanceof Spannable) { email.setText(MakeLinksClicable.reformatText(text1));
+        if (text1 instanceof Spannable) {
+            email.setText(MakeLinksClicable.reformatText(text1));
         }
-        if (text2 instanceof Spannable) { instagram.setText(MakeLinksClicable.reformatText(text2));
+        if (text2 instanceof Spannable) {
+            instagram.setText(MakeLinksClicable.reformatText(text2));
         }
-        if (text3 instanceof Spannable) { telegram.setText(MakeLinksClicable.reformatText(text3));
+        if (text3 instanceof Spannable) {
+            telegram.setText(MakeLinksClicable.reformatText(text3));
         }
-        if (text4 instanceof Spannable) { github.setText(MakeLinksClicable.reformatText(text4));
+        if (text4 instanceof Spannable) {
+            github.setText(MakeLinksClicable.reformatText(text4));
         }
     }
 

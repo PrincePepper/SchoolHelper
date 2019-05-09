@@ -1,13 +1,11 @@
 package com.example.shool_helper;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -19,17 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
-
-import java.util.Objects;
 
 import static com.example.shool_helper.Splash.color;
 
@@ -74,7 +67,6 @@ public class NavigationActivity extends AppCompatActivity
         sPref = getPreferences(MODE_PRIVATE);
 
 
-
     }
 
 
@@ -92,7 +84,7 @@ public class NavigationActivity extends AppCompatActivity
     private void openQuitDialog() {
         //Сообщение о выходе
         AlertDialog.Builder quitDialog = new AlertDialog.Builder(NavigationActivity.this);
-        quitDialog.setTitle("Вы уверены, что хотите выйти?");
+        quitDialog.setTitle(R.string.are_you_sure);
         //Кнопка "ДА"
         quitDialog.setPositiveButton("ДА", (dialog, which) -> {
             // TODO Auto-generated method stub
@@ -112,7 +104,7 @@ public class NavigationActivity extends AppCompatActivity
         //Это добавляет элементы в панель действий, если она присутствует.
         //Обновляется 1 раз за цикл
 
-        Fragment fragment=null;
+        Fragment fragment = null;
         ImageView imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
         //Выставление соответсвуещей иконки выбранному меню

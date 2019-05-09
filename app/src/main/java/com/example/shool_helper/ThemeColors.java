@@ -2,7 +2,6 @@ package com.example.shool_helper;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -52,6 +51,8 @@ public class ThemeColors extends AppCompatActivity {
         editor.putString(KEY, stringColor);
         editor.apply();
 
+        activity.recreate();
+        /*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
         else {
             Intent i = activity.getPackageManager().getLaunchIntentForPackage(activity.getPackageName());
@@ -59,6 +60,7 @@ public class ThemeColors extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             activity.startActivity(i);
         }
+         */
     }
 
     private boolean isLightActionBar() {// Checking if title text color will be black

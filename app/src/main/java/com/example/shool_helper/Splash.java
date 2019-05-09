@@ -1,10 +1,8 @@
 package com.example.shool_helper;
 
 import android.content.Intent;
-
-import android.content.SharedPreferences;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 public class Splash extends AppCompatActivity {
@@ -18,15 +16,12 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         int SPLASH_DISPLAY = 1800;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                Intent SplashIntent = new Intent(Splash.this, NavigationActivity.class);
-                Splash.this.startActivity(SplashIntent);
-                Splash.this.finish();
+            Intent SplashIntent = new Intent(Splash.this, NavigationActivity.class);
+            Splash.this.startActivity(SplashIntent);
+            Splash.this.finish();
 
-            }
         }, SPLASH_DISPLAY);
 
     }
