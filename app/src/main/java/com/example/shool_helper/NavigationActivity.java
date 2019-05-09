@@ -86,12 +86,12 @@ public class NavigationActivity extends AppCompatActivity
         AlertDialog.Builder quitDialog = new AlertDialog.Builder(NavigationActivity.this);
         quitDialog.setTitle(R.string.are_you_sure);
         //Кнопка "ДА"
-        quitDialog.setPositiveButton("ДА", (dialog, which) -> {
+        quitDialog.setPositiveButton(R.string.yes, (dialog, which) -> {
             // TODO Auto-generated method stub
             finish();
         });
         //Кнопка "НЕТ"
-        quitDialog.setNegativeButton("НЕТ", (dialog, which) -> {
+        quitDialog.setNegativeButton(R.string.no, (dialog, which) -> {
             // TODO Auto-generated method stub
         });
 

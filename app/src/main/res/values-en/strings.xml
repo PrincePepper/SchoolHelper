@@ -8,7 +8,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="are_you_sure">Are you sure you want to quit?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
     <string name="nav_header_title">School Helper</string>
     <string name="nav_header_subtitle">semyon3336@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
