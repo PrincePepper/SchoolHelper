@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">School Helper</string>
+
+    <string name="app_about">О нас</string>
+    <string name="todo">TODO</string>
+
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">School Helper</string>
+    <string name="nav_header_subtitle">semyon3336@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_color">Background change</string>
+
+    <string name="menu_physics">Physics</string>
+    <string name="menu_inform">Informatics</string>
+    <string name="menu_ximia">Chemistry</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_howwork">Work?</string>
+    <string name="communicate">Help</string>
+
+    <string name="button_pay">Расчёт</string>
+    <string name="button_decision">Payment</string>
+
+    <string name="input_number">Insert the number:</string>
+
+    <string name="number_system">His numeral system</string>
+    <string name="transfer">Translate to</string>
+    <string name="result">RESULT</string>
+    <string name="number">waiting for the number</string>
+    <string name="rectract">Translate</string>
+    <string name="string_locale">%,d</string>
+
+    <string name="Hello">Hello!</string>
+    <string name="do_svayp">Make \'Swipe \' to the right and start to work :)</string>
+    <string name="thank_you_for_downloading_our_application">Thank you for downloading our application. \nYOU can use:\n       1. Vocabulary formulas in physics\n       2. Balancing chemical reactions\n       3. Translation of numbers from different numeral systems with detailed explanation</string>
+
+    <string-array name="spinner_numbers_1">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="spinner_numbers_2">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>16</item>
+    </string-array>
+</resources>
