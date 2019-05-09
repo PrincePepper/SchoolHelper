@@ -15,6 +15,8 @@ import com.example.shool_helper.Fragment_Menu.Inform_menu.DecisionFragment;
 import com.example.shool_helper.Fragment_Menu.Inform_menu.PaymentFragment;
 import com.example.shool_helper.R;
 
+import java.util.Objects;
+
 public class InformFragment extends Fragment {
 
     private Button btnPayment, btnDecision;
@@ -28,6 +30,7 @@ public class InformFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Objects.requireNonNull(getActivity()).setTitle("Информатика");
         View view = inflater.inflate(R.layout.fragment_inform, container, false);
 
         initializeFragments();

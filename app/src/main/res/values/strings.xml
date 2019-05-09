@@ -31,6 +31,7 @@
     <string name="number">жду числа</string>
     <string name="rectract">Перевести</string>
     <string name="string_locale">%,d</string>
+    <string name="Hello">Привет!</string>
     <string-array name="spinner_numbers_1">
         <item>2</item>
         <item>3</item>

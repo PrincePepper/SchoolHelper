@@ -10,4 +10,6 @@
 
     <color name="colorRed">#c83232</color>
     <color name="colorBlack">#363636</color>
+
+    <color name="colorOrange">#FF6400</color>
 </resources>

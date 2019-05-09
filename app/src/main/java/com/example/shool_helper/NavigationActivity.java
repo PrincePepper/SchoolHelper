@@ -21,12 +21,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
 import static com.example.shool_helper.Splash.color;
-import static com.example.shool_helper.Splash.picture;
 
 
 public class NavigationActivity extends AppCompatActivity
@@ -43,8 +43,11 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new ThemeColors(this);
 
+
+
+        new ThemeColors(this);
+        setTitle("");
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
 
@@ -66,13 +69,9 @@ public class NavigationActivity extends AppCompatActivity
 
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
-        if (!picture) {
-            picture = true;
-            SharedPreferences.Editor ed = sPref.edit();
-            ed.putInt(PICTURE, 0);
-            ed.apply();
 
-        }
+
+
     }
 
 
@@ -110,22 +109,35 @@ public class NavigationActivity extends AppCompatActivity
         //Это добавляет элементы в панель действий, если она присутствует.
         //Обновляется 1 раз за цикл
 
+        Fragment fragment=null;
         ImageView imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
         //Выставление соответсвуещей иконки выбранному меню
         switch (picture) {
             case 0:
+                fragment = new InfoFragment();
                 imageView.setImageResource(R.mipmap.logo);
+
                 break;
             case 1:
+                fragment = new PhysicsFragment();
                 imageView.setImageResource(R.mipmap.physics_icon);
                 break;
             case 2:
+                fragment = new InformFragment();
                 imageView.setImageResource(R.mipmap.inform_icon);
                 break;
             case 3:
+                fragment = new XimiaFragment();
                 imageView.setImageResource(R.mipmap.ximia_icon);
                 break;
+
+        }
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.add(R.id.screen_area, fragment);
+            ft.commit();
         }
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
@@ -150,19 +162,25 @@ public class NavigationActivity extends AppCompatActivity
         // когда вы указываете родительское действие в AndroidManifest.xml.
 
         int id = item.getItemId();
+        //проверка ID фона
         if (id == R.id.action_color) {
-
+            //НАСТРОЙКА ФОНА ПРИЛОЖЕНИЯ
+            //запись в booleanColor последнего использованного фона
             booleanColor = sPref.getBoolean(COLORKEY, false);
             if (color == booleanColor) {
                 color = !color;
             }
             if (color) {
+                //смена фона
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
+                //перехапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, true);
                 ed.apply();
             } else {
+                //смена фона
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
+                //перехапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, false);
                 ed.apply();
@@ -172,48 +190,51 @@ public class NavigationActivity extends AppCompatActivity
         return true;
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         //Обрабатывать навигацию просмотра элементов кликами здесь.
         //Здесь происходит открытие фрагментов окон
 
+        //инициализация Fragment
         Fragment fragment = null;
-
+        //перехвать id окна
         int id = item.getItemId();
-
+        //инициализация SharedPreferences
         SharedPreferences.Editor ed = sPref.edit();
-
-
+        //инициализация imageView
         ImageView imageView = findViewById(R.id.imageViewItems);
+        //проверка ID на выбор окон
         if (id == R.id.nav_physics) {
+            //запуск fragment'a
             fragment = new PhysicsFragment();
+            //установка ижображение конкретного окна
             imageView.setImageResource(R.mipmap.physics_icon);
-
+            //перезапись SharedPreferences
             ed.putInt(PICTURE, 1);
             ed.apply();
         } else if (id == R.id.nav_inform) {
             fragment = new InformFragment();
             imageView.setImageResource(R.mipmap.inform_icon);
-
             ed.putInt(PICTURE, 2);
             ed.apply();
         } else if (id == R.id.nav_ximia) {
             fragment = new XimiaFragment();
             imageView.setImageResource(R.mipmap.ximia_icon);
-
             ed.putInt(PICTURE, 3);
             ed.apply();
         } else if (id == R.id.nav_about) {
+            //инициализация и вызов нового окна About повех всех
             Intent intent_about = new Intent(NavigationActivity.this, About.class);
             startActivity(intent_about);
         } else if (id == R.id.nav_send) {
-
+            fragment = new InfoFragment();
+            imageView.setImageResource(R.mipmap.logo);
         }
 
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
+            //смена fragment'ов, а не перезапуск
             ft.replace(R.id.screen_area, fragment);
             ft.commit();
         }
