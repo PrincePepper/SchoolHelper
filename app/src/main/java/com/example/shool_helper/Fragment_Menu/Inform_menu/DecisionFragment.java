@@ -49,7 +49,7 @@ public class DecisionFragment extends Fragment {
             decision_textView3.setTextColor(Color.MAGENTA);
             decision_textView3.setTextSize(20);
 
-            decision_textView4.setText("Приведем целую часть числа "+subtotal+" в систему счисления "+chooseint_2+" последовательным делением на число "+chooseint_1+".");
+            decision_textView4.setText(getString(R.string.give_the_integer_part)+subtotal+getString(R.string.in_number_systems)+chooseint_2+getString(R.string.successive_division_by_number)+chooseint_1+getString(R.string.point));
             decision_textView4.setTypeface(decision_textView4.getTypeface(), Typeface.BOLD);
             decision_textView4.setTextColor(Color.BLACK);
             decision_textView4.setTextSize(15);
@@ -75,7 +75,7 @@ public class DecisionFragment extends Fragment {
             decision_textView2.setTextColor(Color.BLACK);
             decision_textView2.setTextSize(15);
 
-            decision_textView3.setText("Записав полученные цифры в ряд снизу вверх, получим:");
+            decision_textView3.setText(getString(R.string.writing_the_result));
             decision_textView3.setTypeface(decision_textView3.getTypeface(), Typeface.BOLD);
             decision_textView3.setTextColor(Color.BLACK);
             decision_textView3.setTextSize(15);

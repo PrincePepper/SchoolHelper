@@ -82,6 +82,7 @@
     <string name="point">.</string>
     <string name="successive_division_by_number">successive division by number</string>
     <string name="will_give">Will give</string>
+    <string name="writing_the_result">Writing the resulting numbers in a row from the bottom up, we get:</string>
 
 
 </resources>

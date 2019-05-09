@@ -56,6 +56,7 @@
     <string name="in_number_systems">в систему счисления</string>
     <string name="successive_division_by_number">последовательным делением на число</string>
     <string name="point">.</string>
+    <string name="writing_the_result">Записав полученные цифры в ряд снизу вверх, получим:</string>
 
 
     <string-array name="spinner_numbers_1">
