@@ -19,12 +19,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
+
+import java.util.Objects;
 
 import static com.example.shool_helper.Splash.color;
 
@@ -43,11 +48,9 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         new ThemeColors(this);
         setTitle("");
+
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
 
