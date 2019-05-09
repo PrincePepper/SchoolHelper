@@ -121,7 +121,7 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                         resultend= String.format(getString(R.string.string_locale), result);
                     } else {
                         if (strnumber.length() > 28) {
-                            Toast.makeText(getContext(), "Превышен лимит символов", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), R.string.limit, Toast.LENGTH_SHORT).show();
                         } else {
                             BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
                             result = b.intValue();
@@ -131,11 +131,11 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                     }
                     textView.setText(resultend);
                 } else {
-                    Toast.makeText(getContext(), "Неправильно выбрана система счисления числа", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.incorrect_number, Toast.LENGTH_SHORT).show();
                 }
             } else {
 
-                Toast.makeText(getContext(), "Введите число, чтобы не возникло ошибки", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.enter_the_number, Toast.LENGTH_SHORT).show();
             }
 
         });

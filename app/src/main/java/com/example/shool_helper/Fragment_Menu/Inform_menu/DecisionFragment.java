@@ -28,6 +28,7 @@ public class DecisionFragment extends Fragment {
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -38,12 +39,12 @@ public class DecisionFragment extends Fragment {
         TextView decision_textView6=getActivity().findViewById(R.id.decision_textView6);
         TextView decision_textView7=getActivity().findViewById(R.id.decision_textView7);
         if(chooseint_1!=10){
-            decision_textView2.setText("Приведем "+strnumber+" из системы счисления "+chooseint_1+" в десятичную систему счисления:");
+            decision_textView2.setText(getString(R.string.will_give)+strnumber+getString(R.string.number_systems)+chooseint_1+getString(R.string.decimal_number_system));
             decision_textView2.setTypeface(decision_textView2.getTypeface(), Typeface.BOLD);
             decision_textView2.setTextColor(Color.BLACK);
             decision_textView2.setTextSize(15);
 
-            decision_textView3.setText(strnumber+"-->"+subtotal);
+            decision_textView3.setText(strnumber+getString(R.string.arrow)+subtotal);
             decision_textView3.setTypeface(decision_textView3.getTypeface(), Typeface.ITALIC);
             decision_textView3.setTextColor(Color.MAGENTA);
             decision_textView3.setTextSize(20);
@@ -58,7 +59,7 @@ public class DecisionFragment extends Fragment {
             decision_textView5.setTextColor(Color.BLACK);
             decision_textView5.setTextSize(15);
 
-            decision_textView6.setText(subtotal+"-->"+result);
+            decision_textView6.setText(subtotal+getString(R.string.arrow)+result);
             decision_textView6.setTypeface(decision_textView6.getTypeface(), Typeface.ITALIC);
             decision_textView6.setTextColor(Color.MAGENTA);
             decision_textView6.setTextSize(20);
@@ -69,7 +70,7 @@ public class DecisionFragment extends Fragment {
             decision_textView7.setTextSize(20);
 
         } else{
-            decision_textView2.setText("Приведем целую часть числа "+subtotal+" в систему счисления "+chooseint_2+" последовательным делением на число "+chooseint_2+".");
+            decision_textView2.setText(getString(R.string.give_the_integer_part)+subtotal+getString(R.string.in_number_systems)+chooseint_2+getString(R.string.successive_division_by_number)+chooseint_2+getString(R.string.point));
             decision_textView2.setTypeface(decision_textView2.getTypeface(), Typeface.BOLD);
             decision_textView2.setTextColor(Color.BLACK);
             decision_textView2.setTextSize(15);

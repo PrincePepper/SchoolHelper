@@ -33,8 +33,11 @@
     <string name="button_pay">Расчёт</string>
     <string name="button_decision">Решение</string>
 
-    <string name="input_number">Введите число:</string>
+    <string name="limit">Превышен лимит символов</string>
+    <string name="incorrect_number">Неправильно выбрана система счисления числа</string>
+    <string name="enter_the_number">Введите число, чтобы не возникло ошибки</string>
 
+    <string name="input_number">Введите число:</string>
     <string name="number_system">Его система счисления</string>
     <string name="transfer">Перевести в</string>
     <string name="result">РЕЗУЛЬТАТ</string>
@@ -45,6 +48,15 @@
     <string name="Hello">Привет!</string>
     <string name="do_svayp">Сделай \'Свайп\' вправо и начинай роботать :)</string>
     <string name="thank_you_for_downloading_our_application">Спасибо, что скачали наше приложение. \nВЫ сможете воспользоваться:\n       1. Словарем формул по физике\n       2. Балансировка химических реакций\n       3. Перевод чисел из разных систем счисления с подробным пояснением</string>
+    <string name="will_give">Приведем</string>
+    <string name="number_systems">из системы счисления</string>
+    <string name="decimal_number_system">в десятичную систему счисления:</string>
+    <string name="arrow"><![CDATA[—>]]></string>
+    <string name="give_the_integer_part">Приведем целую часть числа</string>
+    <string name="in_number_systems">в систему счисления</string>
+    <string name="successive_division_by_number">последовательным делением на число</string>
+    <string name="point">.</string>
+
 
     <string-array name="spinner_numbers_1">
         <item>2</item>

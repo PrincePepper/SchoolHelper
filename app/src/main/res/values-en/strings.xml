@@ -33,8 +33,11 @@
     <string name="button_pay">Расчёт</string>
     <string name="button_decision">Payment</string>
 
-    <string name="input_number">Insert the number:</string>
+    <string name="enter_the_number">Enter the number so that no error occurs.</string>
+    <string name="incorrect_number">Incorrect number system</string>
+    <string name="limit">Character Limit Exceeded</string>
 
+    <string name="input_number">Insert the number:</string>
     <string name="number_system">His numeral system</string>
     <string name="transfer">Translate to</string>
     <string name="result">RESULT</string>
@@ -45,6 +48,7 @@
     <string name="Hello">Hello!</string>
     <string name="do_svayp">Make \'Swipe \' to the right and start to work :)</string>
     <string name="thank_you_for_downloading_our_application">Thank you for downloading our application. \nYOU can use:\n       1. Vocabulary formulas in physics\n       2. Balancing chemical reactions\n       3. Translation of numbers from different numeral systems with detailed explanation</string>
+
 
     <string-array name="spinner_numbers_1">
         <item>2</item>
@@ -70,4 +74,14 @@
         <item>10</item>
         <item>16</item>
     </string-array>
+    <string name="arrow"><![CDATA[—>]]></string>
+    <string name="decimal_number_system">to decimal number system:</string>
+    <string name="give_the_integer_part">We give the integer part of the number</string>
+    <string name="in_number_systems">in the numeral system</string>
+    <string name="number_systems">from the number system</string>
+    <string name="point">.</string>
+    <string name="successive_division_by_number">successive division by number</string>
+    <string name="will_give">Will give</string>
+
+
 </resources>
