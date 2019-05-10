@@ -104,36 +104,7 @@ public class NavigationActivity extends AppCompatActivity
         //Это добавляет элементы в панель действий, если она присутствует.
         //Обновляется 1 раз за цикл
 
-        Fragment fragment = null;
-        ImageView imageView = findViewById(R.id.imageViewItems);
-        int picture = sPref.getInt(PICTURE, 0);
-        //Выставление соответсвуещей иконки выбранному меню
-        switch (picture) {
-            case 0:
-                fragment = new InfoFragment();
-                imageView.setImageResource(R.mipmap.logo);
-
-                break;
-            case 1:
-                fragment = new PhysicsFragment();
-                imageView.setImageResource(R.mipmap.physics_icon);
-                break;
-            case 2:
-                fragment = new InformFragment();
-                imageView.setImageResource(R.mipmap.inform_icon);
-                break;
-            case 3:
-                fragment = new XimiaFragment();
-                imageView.setImageResource(R.mipmap.ximia_icon);
-                break;
-
-        }
-        if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction ft = fragmentManager.beginTransaction();
-            ft.add(R.id.screen_area, fragment);
-            ft.commit();
-        }
+        restartFragment();
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
 
@@ -168,18 +139,19 @@ public class NavigationActivity extends AppCompatActivity
             if (color) {
                 //смена фона
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
-                //перехапись переменной SharedPreferences
+                //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, true);
                 ed.apply();
             } else {
                 //смена фона
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
-                //перехапись переменной SharedPreferences
+                //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, false);
                 ed.apply();
             }
+            restartFragment();
         }
 
         return true;
@@ -238,4 +210,39 @@ public class NavigationActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    public void restartFragment() {
+        Fragment fragment = null;
+        ImageView imageView = findViewById(R.id.imageViewItems);
+        int picture = sPref.getInt(PICTURE, 0);
+        //Выставление соответсвуещей иконки выбранному меню
+        switch (picture) {
+            case 0:
+                fragment = new InfoFragment();
+                imageView.setImageResource(R.mipmap.logo);
+
+                break;
+            case 1:
+                fragment = new PhysicsFragment();
+                imageView.setImageResource(R.mipmap.physics_icon);
+                break;
+            case 2:
+                fragment = new InformFragment();
+                imageView.setImageResource(R.mipmap.inform_icon);
+                break;
+            case 3:
+                fragment = new XimiaFragment();
+                imageView.setImageResource(R.mipmap.ximia_icon);
+                break;
+
+        }
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.add(R.id.screen_area, fragment);
+            ft.commit();
+        }
+    }
+
 }

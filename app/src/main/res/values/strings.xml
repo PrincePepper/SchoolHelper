@@ -11,7 +11,7 @@
 
     <string name="are_you_sure">Вы уверены, что хотите выйти?</string>
     <string name="yes">ДА</string>
-    <string name="no" translatable="false">НЕТ</string>
+    <string name="no">НЕТ</string>
 
     <string name="nav_header_title">School Helper</string>
     <string name="nav_header_subtitle">semyon3336@gmail.com</string>
@@ -48,15 +48,15 @@
     <string name="Hello">Привет!</string>
     <string name="do_svayp">Сделай \'Свайп\' вправо и начинай роботать :)</string>
     <string name="thank_you_for_downloading_our_application">Спасибо, что скачали наше приложение. \nВЫ сможете воспользоваться:\n       1. Словарем формул по физике\n       2. Балансировка химических реакций\n       3. Перевод чисел из разных систем счисления с подробным пояснением</string>
-    <string name="will_give">Приведем</string>
-    <string name="number_systems">из системы счисления</string>
-    <string name="decimal_number_system">в десятичную систему счисления:</string>
+    <string name="will_give">"Приведем "</string>
+    <string name="number_systems">" из системы счисления "</string>
+    <string name="decimal_number_system">" в десятичную систему счисления:"</string>
     <string name="arrow"><![CDATA[—>]]></string>
-    <string name="give_the_integer_part">Приведем целую часть числа</string>
-    <string name="in_number_systems">в систему счисления</string>
-    <string name="successive_division_by_number">последовательным делением на число</string>
+    <string name="give_the_integer_part">"Приведем целую часть числа "</string>
+    <string name="in_number_systems">" в систему счисления "</string>
+    <string name="successive_division_by_number">" последовательным делением на число "</string>
     <string name="point">.</string>
-    <string name="writing_the_result">Записав полученные цифры в ряд снизу вверх, получим:</string>
+    <string name="writing_the_result">"Записав полученные цифры в ряд снизу вверх, получим:"</string>
 
 
     <string-array name="spinner_numbers_1">

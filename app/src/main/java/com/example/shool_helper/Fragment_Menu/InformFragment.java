@@ -66,13 +66,10 @@ public class InformFragment extends Fragment {
     private void setPaymentFragment() {
         //Менеджеру даём именно child manager
         fChildManager = getChildFragmentManager();
-
         //Уже из child менеджера получаем транзакцию
         fChildTransactions = fChildManager.beginTransaction();
-
         //Устанавливаем фграмент во frame
         fChildTransactions.replace(R.id.inform_mainFrame, paymentFragment);
-
         //Применяем транзакцию
         fChildTransactions.commit();
     }
