@@ -152,6 +152,7 @@ public class NavigationActivity extends AppCompatActivity
                 ed.apply();
             }
             restartFragment();
+
         }
 
         return true;
@@ -243,6 +244,8 @@ public class NavigationActivity extends AppCompatActivity
             ft.add(R.id.screen_area, fragment);
             ft.commit();
         }
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
 }

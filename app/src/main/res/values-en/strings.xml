@@ -83,6 +83,7 @@
     <string name="successive_division_by_number">" successive division by number "</string>
     <string name="will_give">"Will give "</string>
     <string name="writing_the_result">Writing the resulting numbers in a row from the bottom up, we get:</string>
-
+    <string name="give_estimate">" Rate This App "</string>
+    <string name="android_market">Could not open Android market, please check if the market app installed or not. Try again later</string>
 
 </resources>

@@ -1,11 +1,17 @@
 package com.example.shool_helper;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class About extends AppCompatActivity {
@@ -13,6 +19,8 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_about);
+
+        Button rate = findViewById(R.id.rate);
 
         //находим TextView
         TextView email = findViewById(R.id.email);
@@ -63,6 +71,27 @@ public class About extends AppCompatActivity {
         if (text4 instanceof Spannable) {
             github.setText(MakeLinksClicable.reformatText(text4));
         }
+        rate.setOnClickListener(this::onClickRateThisApp);
     }
 
+
+    public void onClickRateThisApp(View v) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=com.supercell.hayday"));
+        if (isActivityStarted(intent)) {
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.supercell.hayday"));
+            if (isActivityStarted(intent)) {
+                //оповещение об отсутсвии Play Market
+                Toast.makeText(this, getString(R.string.android_market), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private boolean isActivityStarted(Intent aIntent) {
+        try {
+            startActivity(aIntent);
+            return false;
+        } catch (ActivityNotFoundException e) {
+            return true;
+        }
+    }
 }

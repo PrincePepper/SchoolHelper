@@ -91,8 +91,5 @@ public class DecisionFragment extends Fragment {
             decision_textView5.setTextSize(20);
 
         }
-
-
     }
-
 }
