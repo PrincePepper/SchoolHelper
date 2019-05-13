@@ -57,7 +57,6 @@
     <string name="successive_division_by_number">" последовательным делением на число "</string>
     <string name="point">.</string>
     <string name="writing_the_result">"Записав полученные цифры в ряд снизу вверх, получим:"</string>
-    <string name="give_estimate">" Оцените это приложениe "</string>
     <string name="android_market">Не удалось открыть Android-маркет, проверьте, установлено приложение маркета или нет. Попробуйте позже</string>
 
 

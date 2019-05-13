@@ -38,7 +38,7 @@
                 android:layout_height="45dp"
                 android:layout_weight="1"
                 android:textAlignment="textStart"
-                android:textSize="15sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -109,14 +109,12 @@
         </TableRow>
     </TableLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/give_estimate"
-        android:textColor="@color/colorGreen"
-        android:background="@drawable/my_button_bg"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_marginStart="100dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/googleplay" />
 
 </LinearLayout>

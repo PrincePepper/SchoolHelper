@@ -9,7 +9,7 @@ import android.text.Html;
 import android.text.Spannable;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +20,7 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_about);
 
-        Button rate = findViewById(R.id.rate);
+        ImageButton rate = findViewById(R.id.rate);
 
         //находим TextView
         TextView email = findViewById(R.id.email);
