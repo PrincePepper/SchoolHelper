@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.InformFragment;
@@ -187,10 +188,11 @@ public class NavigationActivity extends AppCompatActivity
             ed.putInt(PICTURE, 2);
             ed.apply();
         } else if (id == R.id.nav_ximia) {
-            fragment = new XimiaFragment();
+            Toast.makeText(this, R.string.In_developing, Toast.LENGTH_SHORT).show();
+            /*fragment = new XimiaFragment();
             imageView.setImageResource(R.mipmap.ximia_icon);
             ed.putInt(PICTURE, 3);
-            ed.apply();
+            ed.apply();*/
         } else if (id == R.id.nav_about) {
             //инициализация и вызов нового окна About повех всех
             Intent intent_about = new Intent(NavigationActivity.this, About.class);
