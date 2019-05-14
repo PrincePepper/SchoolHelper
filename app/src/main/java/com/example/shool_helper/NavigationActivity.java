@@ -21,6 +21,7 @@ import android.widget.ImageView;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.InformFragment;
+import com.example.shool_helper.Fragment_Menu.Inform_menu.ChangefragmentFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
 
@@ -137,14 +138,14 @@ public class NavigationActivity extends AppCompatActivity
                 color = !color;
             }
             if (color) {
-                //смена фона
+                //смена фона - красный
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
                 //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, true);
                 ed.apply();
             } else {
-                //смена фона
+                //смена фона - темный-серый
                 ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
                 //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
@@ -181,7 +182,7 @@ public class NavigationActivity extends AppCompatActivity
             ed.putInt(PICTURE, 1);
             ed.apply();
         } else if (id == R.id.nav_inform) {
-            fragment = new InformFragment();
+            fragment = new ChangefragmentFragment();
             imageView.setImageResource(R.mipmap.inform_icon);
             ed.putInt(PICTURE, 2);
             ed.apply();

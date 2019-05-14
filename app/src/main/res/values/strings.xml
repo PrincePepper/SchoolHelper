@@ -58,6 +58,10 @@
     <string name="point">.</string>
     <string name="writing_the_result">"Записав полученные цифры в ряд снизу вверх, получим:"</string>
     <string name="android_market">Не удалось открыть Android-маркет, проверьте, установлено приложение маркета или нет. Попробуйте позже</string>
+    <string name="take_razdel">Выбери раздел:</string>
+    <string name="ip_cal">Сетевой калькулятор</string>
+    <string name="scale_cal">Калькулятор систем счисления</string>
+    <string name="In_developing">В разработке</string>
 
 
     <string-array name="spinner_numbers_1">

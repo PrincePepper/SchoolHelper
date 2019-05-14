@@ -84,5 +84,9 @@
     <string name="will_give">"Will give "</string>
     <string name="writing_the_result">Writing the resulting numbers in a row from the bottom up, we get:</string>
     <string name="android_market">Could not open Android market, please check if the market app installed or not. Try again later</string>
+    <string name="In_developing">In developing</string>
+    <string name="ip_cal">Network calculator</string>
+    <string name="scale_cal">Calculator number systems</string>
+    <string name="take_razdel">Choose a section:</string>
 
 </resources>
