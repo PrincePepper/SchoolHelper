@@ -23,28 +23,22 @@ public class About extends AppCompatActivity {
         ImageButton rate = findViewById(R.id.rate);
 
         //находим TextView
-        TextView email = findViewById(R.id.email);
         TextView instagram = findViewById(R.id.instagram);
         TextView telegram = findViewById(R.id.telegram);
         TextView github = findViewById(R.id.github);
 
 //Экранируем кавычки в атрибуте html тега слэшем:
-        String textWithLink_email = "<a href=\"semyon3336@gmail.com\">Email</a>";
-        String textWithLink_instagram = "<a href=\"https://www.instagram.com/school_helper_vl\">Instagram</a>";
+        String textWithLink_instagram = "<a href=\"https://www.instagram.com/ppt.co_official\">Instagram</a>";
         String textWithLink_telegram = "<a href=\"https://t.me/PrincePepper\">Telegram</a>";
         String textWithLink_github = "<a href=\"https://github.com/PrincePepper\">GitHub</a>";
 
 
 //Указываем с помощью Html.fromHtml, что у нас не просто текст:
-        email.setText(Html.fromHtml(textWithLink_email, null, null));
         instagram.setText(Html.fromHtml(textWithLink_instagram, null, null));
         telegram.setText(Html.fromHtml(textWithLink_telegram, null, null));
         github.setText(Html.fromHtml(textWithLink_github, null, null));
 
 ////Указываем что разрешаем ссылки кликать:
-        email.setLinksClickable(true);
-        email.setMovementMethod(LinkMovementMethod.getInstance());
-
         instagram.setLinksClickable(true);
         instagram.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -55,13 +49,9 @@ public class About extends AppCompatActivity {
         github.setMovementMethod(LinkMovementMethod.getInstance());
 
 //Научаемся отлавливать клики пропустив текст через наш класс из пред. пункта.
-        CharSequence text1 = email.getText();
         CharSequence text2 = instagram.getText();
         CharSequence text3 = telegram.getText();
         CharSequence text4 = github.getText();
-        if (text1 instanceof Spannable) {
-            email.setText(MakeLinksClicable.reformatText(text1));
-        }
         if (text2 instanceof Spannable) {
             instagram.setText(MakeLinksClicable.reformatText(text2));
         }

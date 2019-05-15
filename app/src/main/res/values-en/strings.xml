@@ -88,5 +88,6 @@
     <string name="ip_cal">Network calculator</string>
     <string name="scale_cal">Calculator number systems</string>
     <string name="take_razdel">Choose a section:</string>
-
+    <string name="ppt_co_samsung"><![CDATA[The application was developed by PPT.co with the support of << Samsung school>>]]></string>
+    <string name="http_www_ppt_co">http://www.PPT.co</string>
 </resources>

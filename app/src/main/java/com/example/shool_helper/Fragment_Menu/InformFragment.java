@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.shool_helper.Fragment_Menu.Inform_menu.DecisionFragment;
-import com.example.shool_helper.Fragment_Menu.Inform_menu.NullFragment;
 import com.example.shool_helper.Fragment_Menu.Inform_menu.PaymentFragment;
 import com.example.shool_helper.R;
 
 import java.util.Objects;
+
 
 public class InformFragment extends Fragment {
 
@@ -24,7 +24,6 @@ public class InformFragment extends Fragment {
     //Фрагменты для отображения на экране
     private PaymentFragment paymentFragment;
     private DecisionFragment fragmentDecision;
-    private NullFragment nullFragment;
     //"Инструмены" необходимые для отображения child фрагментов
     private FragmentTransaction fChildTransactions;
     private FragmentManager fChildManager;
@@ -53,16 +52,14 @@ public class InformFragment extends Fragment {
         btnPayment.setOnClickListener(oclBtn);
         btnDecision.setOnClickListener(oclBtn);
 
-        setNullFragment();
+
 
         return view;
-
     }
 
     private void initializeFragments() {
         fragmentDecision = new DecisionFragment();
         paymentFragment = new PaymentFragment();
-        nullFragment=new NullFragment();
     }
 
     private void setPaymentFragment() {
@@ -83,12 +80,6 @@ public class InformFragment extends Fragment {
         fChildTransactions.commit();
     }
 
-    private void setNullFragment() {
-        fChildManager = getChildFragmentManager();
-        fChildTransactions = fChildManager.beginTransaction();
-        fChildTransactions.replace(R.id.inform_mainFrame, nullFragment);
-        fChildTransactions.commit();
-    }
 
 }
 

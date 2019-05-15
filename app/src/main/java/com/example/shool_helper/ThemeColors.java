@@ -52,6 +52,7 @@ public class ThemeColors extends AppCompatActivity {
         editor.apply();
 
         activity.recreate();
+        new NavigationActivity();
         /*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
         else {

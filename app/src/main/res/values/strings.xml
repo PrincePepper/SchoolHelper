@@ -62,6 +62,8 @@
     <string name="ip_cal">Сетевой калькулятор</string>
     <string name="scale_cal">Калькулятор систем счисления</string>
     <string name="In_developing">В разработке</string>
+    <string name="ppt_co_samsung"><![CDATA[Приложение разработано компанией PPT.co при поддержке <<школы Samsung\'а>>]]></string>
+    <string name="http_www_ppt_co">http://www.PPT.co</string>
 
 
     <string-array name="spinner_numbers_1">

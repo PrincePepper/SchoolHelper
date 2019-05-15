@@ -29,6 +29,8 @@ public class ChangefragmentFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Objects.requireNonNull(getActivity()).setTitle(R.string.fragment_inform);
         final Button[] ip_cal = {Objects.requireNonNull(getActivity()).findViewById(R.id.ip_cal)};
         final Button[] scale_cal = {getActivity().findViewById(R.id.scale_cal)};
         final Fragment[] fragment = {null};

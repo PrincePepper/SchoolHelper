@@ -109,7 +109,6 @@ public class NavigationActivity extends AppCompatActivity
         restartFragment();
 
         booleanColor = sPref.getBoolean(COLORKEY, true);
-
         if (color == booleanColor) {
             color = !color;
         }
@@ -232,7 +231,7 @@ public class NavigationActivity extends AppCompatActivity
                 imageView.setImageResource(R.mipmap.physics_icon);
                 break;
             case 2:
-                fragment = new InformFragment();
+                fragment = new ChangefragmentFragment();
                 imageView.setImageResource(R.mipmap.inform_icon);
                 break;
             case 3:
@@ -244,7 +243,7 @@ public class NavigationActivity extends AppCompatActivity
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
-            ft.add(R.id.screen_area, fragment);
+            ft.replace(R.id.screen_area, fragment);
             ft.commit();
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
