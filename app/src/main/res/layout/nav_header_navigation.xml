@@ -12,12 +12,12 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageViewItems"
+        android:id="@+id/imageviewitems"
         android:layout_width="107dp"
         android:layout_height="98dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/ppt_6"/>
+        android:src="@mipmap/logo"/>
 
     <TextView
         android:layout_width="wrap_content"

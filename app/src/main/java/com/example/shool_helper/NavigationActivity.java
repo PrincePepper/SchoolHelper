@@ -53,6 +53,7 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setTitle("");
 
         SharedPreferences sharedPreferences = getSharedPreferences(NAME, Context.MODE_PRIVATE);
@@ -61,7 +62,7 @@ public class NavigationActivity extends AppCompatActivity
 
         if (isLightActionBar()) setTheme(R.style.AppTheme);
         setTheme(getResources().getIdentifier("T_" + stringColor, "style", getPackageName()));
-
+        imageView = findViewById(R.id.imageviewitems);
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
 
@@ -82,7 +83,7 @@ public class NavigationActivity extends AppCompatActivity
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
 
-        imageView = findViewById(R.id.imageViewItems);
+
 
 
     }
@@ -176,7 +177,7 @@ public class NavigationActivity extends AppCompatActivity
         //инициализация SharedPreferences
         SharedPreferences.Editor ed = sPref.edit();
         //инициализация imageView
-        imageView = findViewById(R.id.imageViewItems);
+        imageView = findViewById(R.id.imageviewitems);
         //проверка ID на выбор окон
         if (id == R.id.nav_physics) {
             //запуск fragment'a
@@ -222,27 +223,30 @@ public class NavigationActivity extends AppCompatActivity
     public void restartFragment() {
         Fragment fragment = null;
         int picture = sPref.getInt(PICTURE, 0);
-        imageView = findViewById(R.id.imageViewItems);
+        imageView = findViewById(R.id.imageviewitems);
         //Выставление соответсвуещей иконки выбранному меню
-        switch (picture) {
-            case 0:
-                fragment = new InfoFragment();
-                imageView.setImageResource(R.mipmap.logo);
-                break;
-            case 1:
-                fragment = new PhysicsFragment();
-                imageView.setImageResource(R.mipmap.physics_icon);
-                break;
-            case 2:
-                fragment = new ChangefragmentFragment();
-                imageView.setImageResource(R.mipmap.inform_icon);
-                break;
-            case 3:
-                fragment = new XimiaFragment();
-                imageView.setImageResource(R.mipmap.ximia_icon);
-                break;
+        if(imageView!=null){
+            switch (picture) {
+                case 0:
+                    fragment = new InfoFragment();
+                    imageView.setImageResource(R.mipmap.logo);
+                    break;
+                case 1:
+                    fragment = new PhysicsFragment();
+                    imageView.setImageResource(R.mipmap.physics_icon);
+                    break;
+                case 2:
+                    fragment = new ChangefragmentFragment();
+                    imageView.setImageResource(R.mipmap.inform_icon);
+                    break;
+                case 3:
+                    fragment = new XimiaFragment();
+                    imageView.setImageResource(R.mipmap.ximia_icon);
+                    break;
 
+            }
         }
+
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
@@ -263,7 +267,7 @@ public class NavigationActivity extends AppCompatActivity
 
 
 
-    public static void setNewThemeColor(Activity activity, int red, int green, int blue) {
+    public static void setNewThemeColor( Activity activity, int red, int green, int blue) {
         int colorStep = 15;
 
         red = Math.round(red / colorStep) * colorStep;
