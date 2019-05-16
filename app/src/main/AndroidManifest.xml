@@ -46,11 +46,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ThemeColors"
-            android:label="@string/app_about"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/AppTheme.About"/>
+        
     </application>
 
 </manifest>
