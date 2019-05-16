@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/todo"
         android:foregroundGravity="center"
-        android:src="@color/splash" />
+        android:src="@color/splash"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/hello"
@@ -25,14 +27,14 @@
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toEndOf="@+id/smile"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/smile"
-        android:layout_width="279dp"
-        android:layout_height="182dp"
+        android:layout_width="261dp"
+        android:layout_height="178dp"
         android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

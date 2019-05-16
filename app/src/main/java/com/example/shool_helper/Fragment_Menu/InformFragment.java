@@ -52,7 +52,7 @@ public class InformFragment extends Fragment {
         btnPayment.setOnClickListener(oclBtn);
         btnDecision.setOnClickListener(oclBtn);
 
-
+        setPaymentFragment();
 
         return view;
     }

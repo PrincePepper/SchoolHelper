@@ -1,9 +1,13 @@
 package com.example.shool_helper;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -33,17 +37,30 @@ public class NavigationActivity extends AppCompatActivity
 
     private static final String COLORKEY = "false";
     public static final String PICTURE = "picture";
+
+    private static final String NAME = "ThemeColors", KEY = "color";
+    public static String stringColor;
+
     public static SharedPreferences sPref;
 
-    public boolean booleanColor;
+    @ColorInt
+    public int colortheme;
 
+    public boolean booleanColor;
+    public ImageView imageView;
     private View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new ThemeColors(this);
         setTitle("");
+
+        SharedPreferences sharedPreferences = getSharedPreferences(NAME, Context.MODE_PRIVATE);
+        String stringColor = sharedPreferences.getString(KEY, "c83232");
+        colortheme = Color.parseColor("#" + stringColor);
+
+        if (isLightActionBar()) setTheme(R.style.AppTheme);
+        setTheme(getResources().getIdentifier("T_" + stringColor, "style", getPackageName()));
 
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
@@ -55,7 +72,6 @@ public class NavigationActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -63,9 +79,10 @@ public class NavigationActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         header = navigationView.getHeaderView(0);
 
-
         setTitle("School Helper");
         sPref = getPreferences(MODE_PRIVATE);
+
+        imageView = findViewById(R.id.imageViewItems);
 
 
     }
@@ -106,18 +123,8 @@ public class NavigationActivity extends AppCompatActivity
         //Обновляется 1 раз за цикл
 
         restartFragment();
-
-        booleanColor = sPref.getBoolean(COLORKEY, true);
-        if (color == booleanColor) {
-            color = !color;
-        }
-        if (color) {
-            header.setBackgroundResource(R.color.colorBlack);
-        } else {
-            header.setBackgroundResource(R.color.colorRed);
-        }
-
         getMenuInflater().inflate(R.menu.navigation, menu);
+
         return true;
     }
 
@@ -138,14 +145,14 @@ public class NavigationActivity extends AppCompatActivity
             }
             if (color) {
                 //смена фона - красный
-                ThemeColors.setNewThemeColor(NavigationActivity.this, 200, 50, 50);
+                setNewThemeColor(NavigationActivity.this, 200, 50, 50);
                 //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, true);
                 ed.apply();
             } else {
                 //смена фона - темный-серый
-                ThemeColors.setNewThemeColor(NavigationActivity.this, 54, 54, 54);
+                setNewThemeColor(NavigationActivity.this, 54, 54, 54);
                 //перезапись переменной SharedPreferences
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, false);
@@ -169,7 +176,7 @@ public class NavigationActivity extends AppCompatActivity
         //инициализация SharedPreferences
         SharedPreferences.Editor ed = sPref.edit();
         //инициализация imageView
-        ImageView imageView = findViewById(R.id.imageViewItems);
+        imageView = findViewById(R.id.imageViewItems);
         //проверка ID на выбор окон
         if (id == R.id.nav_physics) {
             //запуск fragment'a
@@ -206,7 +213,6 @@ public class NavigationActivity extends AppCompatActivity
             ft.replace(R.id.screen_area, fragment);
             ft.commit();
         }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -215,8 +221,8 @@ public class NavigationActivity extends AppCompatActivity
 
     public void restartFragment() {
         Fragment fragment = null;
-        ImageView imageView = findViewById(R.id.imageViewItems);
         int picture = sPref.getInt(PICTURE, 0);
+        imageView = findViewById(R.id.imageViewItems);
         //Выставление соответсвуещей иконки выбранному меню
         switch (picture) {
             case 0:
@@ -243,8 +249,47 @@ public class NavigationActivity extends AppCompatActivity
             ft.replace(R.id.screen_area, fragment);
             ft.commit();
         }
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        booleanColor = sPref.getBoolean(COLORKEY, true);
+        if (color == booleanColor) {
+            color = !color;
+        }
+        if (color) {
+            header.setBackgroundResource(R.color.colorBlack);
+        } else {
+            header.setBackgroundResource(R.color.colorRed);
+        }
+
+    }
+
+
+
+    public static void setNewThemeColor(Activity activity, int red, int green, int blue) {
+        int colorStep = 15;
+
+        red = Math.round(red / colorStep) * colorStep;
+        green = Math.round(green / colorStep) * colorStep;
+        blue = Math.round(blue / colorStep) * colorStep;
+
+        stringColor = Integer.toHexString(Color.rgb(red, green, blue)).substring(2);
+        SharedPreferences.Editor editor = activity.getSharedPreferences(NAME, Context.MODE_PRIVATE).edit();
+        editor.putString(KEY, stringColor);
+        editor.apply();
+
+        activity.recreate();
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
+        else {
+            Intent i = activity.getPackageManager().getLaunchIntentForPackage(activity.getPackageName());
+            assert i != null;
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            activity.startActivity(i);
+        }*/
+
+    }
+
+    private boolean isLightActionBar() {// Checking if title text color will be black
+        int rgb = (Color.red(colortheme) + Color.green(colortheme) + Color.blue(colortheme)) / 3;
+        return rgb > 210;
     }
 
 }
