@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
-import com.example.shool_helper.Fragment_Menu.InformFragment;
 import com.example.shool_helper.Fragment_Menu.Inform_menu.ChangefragmentFragment;
 import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.XimiaFragment;
@@ -151,11 +150,10 @@ public class NavigationActivity extends AppCompatActivity
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putBoolean(COLORKEY, false);
                 ed.apply();
+
             }
-            restartFragment();
 
         }
-
         return true;
     }
 
@@ -224,7 +222,6 @@ public class NavigationActivity extends AppCompatActivity
             case 0:
                 fragment = new InfoFragment();
                 imageView.setImageResource(R.mipmap.logo);
-
                 break;
             case 1:
                 fragment = new PhysicsFragment();
@@ -251,3 +248,5 @@ public class NavigationActivity extends AppCompatActivity
     }
 
 }
+
+

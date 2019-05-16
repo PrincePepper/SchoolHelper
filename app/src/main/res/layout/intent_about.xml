@@ -103,7 +103,7 @@
         android:id="@+id/rate"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         android:contentDescription="@string/todo"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/googleplay" />
@@ -117,9 +117,10 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ppt_6" />
+        app:srcCompat="@drawable/ppt_6"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView7"
@@ -131,7 +132,6 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:autoLink="web"
 
         android:gravity="center"

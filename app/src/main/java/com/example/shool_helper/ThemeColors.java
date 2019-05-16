@@ -52,16 +52,15 @@ public class ThemeColors extends AppCompatActivity {
         editor.apply();
 
         activity.recreate();
-        new NavigationActivity();
-        /*
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) activity.recreate();
         else {
             Intent i = activity.getPackageManager().getLaunchIntentForPackage(activity.getPackageName());
             assert i != null;
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             activity.startActivity(i);
-        }
-         */
+        }*/
+
     }
 
     private boolean isLightActionBar() {// Checking if title text color will be black
