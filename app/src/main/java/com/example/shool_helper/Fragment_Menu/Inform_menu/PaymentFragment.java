@@ -30,12 +30,13 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_pay, container, false);
+        return inflater.inflate(R.layout.fragment_pay, null);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         Spinner spinner1 = Objects.requireNonNull(getActivity()).findViewById(R.id.spinner1);
         Spinner spinner2 = Objects.requireNonNull(getActivity()).findViewById(R.id.spinner2);
         TextView textView = getActivity().findViewById(R.id.result);

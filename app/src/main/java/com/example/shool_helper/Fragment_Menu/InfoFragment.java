@@ -19,7 +19,7 @@ public class InfoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Objects.requireNonNull(getActivity()).setTitle(R.string.fragment_greeting);
-        return inflater.inflate(R.layout.fragment_info, container, false);
+        return inflater.inflate(R.layout.fragment_info, null);
     }
 
     @Override
