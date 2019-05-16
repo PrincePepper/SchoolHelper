@@ -1,5 +1,6 @@
 package com.example.shool_helper;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.v7.app.AppCompatActivity;
+
 
 public class ThemeColors extends AppCompatActivity {
 
