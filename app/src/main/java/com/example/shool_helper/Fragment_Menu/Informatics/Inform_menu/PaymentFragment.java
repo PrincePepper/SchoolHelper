@@ -23,8 +23,8 @@ import java.util.Objects;
 
 public class PaymentFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    public static String choose1, choose2, strnumber,resultend,subtotal;
-    public static int chooseint_1, chooseint_2,result;
+    public static String choose1, choose2, strnumber, resultend, subtotal;
+    public static int chooseint_1, chooseint_2, result;
 
     @SuppressLint("InflateParams")
     @Nullable
@@ -116,10 +116,10 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
                 if (start == 1) {
                     if (chooseint_2 != 16) {
                         BigInteger b = new BigInteger(new BigInteger(strnumber).toString(10), chooseint_1);
-                        subtotal=b.toString();
+                        subtotal = b.toString();
                         BigInteger c = new BigInteger(new BigInteger(subtotal).toString(chooseint_2), 10);
-                         result = c.intValue();
-                        resultend= String.format(getString(R.string.string_locale), result);
+                        result = c.intValue();
+                        resultend = String.format(getString(R.string.string_locale), result);
                     } else {
                         if (strnumber.length() > 28) {
                             Toast.makeText(getContext(), R.string.limit, Toast.LENGTH_SHORT).show();

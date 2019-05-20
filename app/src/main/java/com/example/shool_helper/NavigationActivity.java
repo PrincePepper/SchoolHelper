@@ -28,12 +28,15 @@ import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.Informatics.ChangefragmentFragment;
 import com.example.shool_helper.Fragment_Menu.Physics.PhysicsFragment;
 import com.example.shool_helper.Fragment_Menu.Chemistry.XimiaFragment;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import static com.example.shool_helper.Splash.color;
 
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public static final String KEY_FRAGMENT = "fragment";
 
@@ -62,6 +65,8 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         setTitle("");//мы не устанавливаем имя navigation
 
