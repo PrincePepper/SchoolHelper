@@ -18,18 +18,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.shool_helper.Fragment_Menu.Chemistry.XimiaFragment;
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.Informatics.ChangefragmentFragment;
 import com.example.shool_helper.Fragment_Menu.Physics.PhysicsFragment;
-import com.example.shool_helper.Fragment_Menu.Chemistry.XimiaFragment;
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import static com.example.shool_helper.Splash.color;
 
@@ -37,8 +35,7 @@ import static com.example.shool_helper.Splash.color;
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private FirebaseAnalytics mFirebaseAnalytics;
-
+    private static final String TAG = "myLogs";
     public static final String KEY_FRAGMENT = "fragment";
 
     static final String COLORKEY = "false", PICTURE = "picture";
@@ -67,7 +64,7 @@ public class NavigationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
         setTitle("");//мы не устанавливаем имя navigation
 
@@ -203,6 +200,7 @@ public class NavigationActivity extends AppCompatActivity
             ed.putInt(PICTURE, 1);
             ed.apply();
         } else if (id == R.id.nav_inform) {
+
             fragment = new ChangefragmentFragment();
             imageView.setImageResource(R.mipmap.inform_icon);
             ed.putInt(PICTURE, 2);

@@ -15,21 +15,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FirebasePhysics extends AppCompatActivity {
 
-    /*private DatabaseReference myRef;
-    private static final String TAG = "Physics";
+    private DatabaseReference myRef;
+    private static final String TAG = "myLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_network);
-        TextView textView = findViewById(R.id.textView8);
 
-        myRef = FirebaseDatabase.getInstance().getReference();
-// Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -38,15 +30,13 @@ public class FirebasePhysics extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Value is: " + value);
-                textView.setText(value);
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-                textView.setText("Failed to read value.");
+                Log.d(TAG, "Failed to read value.");
             }
         });
-    }*/
+    }
 }

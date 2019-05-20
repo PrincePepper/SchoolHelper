@@ -50,11 +50,11 @@ public class ChangefragmentFragment extends Fragment {
 
         ip_cal[0].setOnClickListener(v -> {
             Toast.makeText(getContext(), R.string.In_developing, Toast.LENGTH_SHORT).show();
-            fragment[0] = new NetworkCalFragment();
+            /*fragment[0] = new NetworkCalFragment();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.replace(R.id.screen_area, fragment[0]);
-            ft.commit();
+            ft.commit();*/
         });
     }
 

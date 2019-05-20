@@ -62,7 +62,10 @@ public class PhysicsFragment extends Fragment {
             String name = entity.getFormula();
             textView_formula.setText(name);
         } catch (Exception e) {
-            Toast.makeText(getContext(), R.string.enter_the_number, Toast.LENGTH_SHORT).show();
+            if (textView_formula.getText().length() == 0) {
+                Toast.makeText(getContext(), "Видимо такой формулы нет", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }

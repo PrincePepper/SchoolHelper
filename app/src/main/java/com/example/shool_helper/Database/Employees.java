@@ -13,7 +13,7 @@ public class Employees {
     private String formula;
     String formula_name;
 
-    public Employees(String formula, String formula_name) {
+    public Employees(String formula_name, String formula) {
         this.formula = formula;
         this.formula_name = formula_name;
     }

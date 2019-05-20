@@ -17,20 +17,20 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:importantForAutofill="no" />
+            android:inputType="textMultiLine" />
 
         <Button
             android:id="@+id/button_find"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Найти формулу"
             android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/textView_formula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="50dp"
+            android:textSize="30sp"/>
 
 </LinearLayout>
