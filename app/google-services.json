@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "169794852791",
+    "firebase_url": "https://schoolhelper-vl.firebaseio.com",
+    "project_id": "schoolhelper-vl",
+    "storage_bucket": "schoolhelper-vl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169794852791:android:a400501584daeb2f",
+        "android_client_info": {
+          "package_name": "com.example.shool_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169794852791-0oa70n8liu4dd3vui1gcpgargpd1bv6q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shool_helper",
+            "certificate_hash": "3e9d68370f480f5717a927b028d47ff5bffee779"
+          }
+        },
+        {
+          "client_id": "169794852791-sspvc6bd8tcq16ckpgfrigo838i6n0vp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfKWVdg7Q9cJLjMK4Q9UaKkeDfP7Hemfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169794852791-sspvc6bd8tcq16ckpgfrigo838i6n0vp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

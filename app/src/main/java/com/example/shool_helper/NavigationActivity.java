@@ -25,9 +25,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.shool_helper.Fragment_Menu.InfoFragment;
-import com.example.shool_helper.Fragment_Menu.Inform_menu.ChangefragmentFragment;
-import com.example.shool_helper.Fragment_Menu.PhysicsFragment;
-import com.example.shool_helper.Fragment_Menu.XimiaFragment;
+import com.example.shool_helper.Fragment_Menu.Informatics.ChangefragmentFragment;
+import com.example.shool_helper.Fragment_Menu.Physics.PhysicsFragment;
+import com.example.shool_helper.Fragment_Menu.Chemistry.XimiaFragment;
 
 import static com.example.shool_helper.Splash.color;
 
@@ -35,68 +35,77 @@ import static com.example.shool_helper.Splash.color;
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String COLORKEY = "false";
-    public static final String PICTURE = "picture";
+    public static final String KEY_FRAGMENT = "fragment";
 
-    private static final String NAME = "ThemeColors", KEY = "color";
-    public static String stringColor;
+    static final String COLORKEY = "false", PICTURE = "picture";
+    static final String NAME = "ThemeColors", KEY = "color";
+    static String stringColor;
 
-    public static SharedPreferences sPref;
+    public static SharedPreferences sPref_fragment;
+
+    static SharedPreferences sPref;
+    static SharedPreferences sharedPreferences;
 
     @ColorInt
-    public int colortheme;
+    int colortheme;
 
-    public boolean booleanColor;
-    public ImageView imageView;
-    private View header;
+    int key_fragment;
+    boolean booleanColor;
+
+    ImageView imageView;
+    View header;
+    DrawerLayout drawer;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle("");
+        setTitle("");//мы не устанавливаем имя navigation
 
-        SharedPreferences sharedPreferences = getSharedPreferences(NAME, Context.MODE_PRIVATE);
-        String stringColor = sharedPreferences.getString(KEY, "c83232");
-        colortheme = Color.parseColor("#" + stringColor);
+        ThemeChange();
 
-        if (isLightActionBar()) setTheme(R.style.AppTheme);
-        setTheme(getResources().getIdentifier("T_" + stringColor, "style", getPackageName()));
-        imageView = findViewById(R.id.imageviewitems);
-        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_navigation);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        sPref = getPreferences(MODE_PRIVATE);
+        sPref_fragment =getPreferences(MODE_PRIVATE);
+
+        toolbar = findViewById(R.id.toolbar);
+        imageView = findViewById(R.id.imageviewitems);
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
         setSupportActionBar(toolbar);
-
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
         header = navigationView.getHeaderView(0);
 
-        setTitle("School Helper");
-        sPref = getPreferences(MODE_PRIVATE);
-
-
-
 
     }
-
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            openQuitDialog();
+        if((key_fragment  = sPref_fragment.getInt(KEY_FRAGMENT, 0))==0){
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                openQuitDialog();
+            }
+        } else{
+            Fragment fragment = new ChangefragmentFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            //смена fragment'ов, а не перезапуск
+            ft.replace(R.id.screen_area, fragment);
+            ft.commit();
         }
+
     }
 
     //Вызов меню выхода из приложения
@@ -219,13 +228,22 @@ public class NavigationActivity extends AppCompatActivity
         return true;
     }
 
+    private void ThemeChange() {
+        sharedPreferences = getSharedPreferences(NAME, Context.MODE_PRIVATE);
+        String stringColor = sharedPreferences.getString(KEY, "c83232");
+        colortheme = Color.parseColor("#" + stringColor);
+
+        if (isLightActionBar()) setTheme(R.style.AppTheme);
+        setTheme(getResources().getIdentifier("T_" + stringColor, "style",//установка темы
+                getPackageName()));
+    }
 
     public void restartFragment() {
         Fragment fragment = null;
         int picture = sPref.getInt(PICTURE, 0);
         imageView = findViewById(R.id.imageviewitems);
         //Выставление соответсвуещей иконки выбранному меню
-        if(imageView!=null){
+        if (imageView != null) {
             switch (picture) {
                 case 0:
                     fragment = new InfoFragment();
@@ -266,8 +284,7 @@ public class NavigationActivity extends AppCompatActivity
     }
 
 
-
-    public static void setNewThemeColor( Activity activity, int red, int green, int blue) {
+    public static void setNewThemeColor(Activity activity, int red, int green, int blue) {
         int colorStep = 15;
 
         red = Math.round(red / colorStep) * colorStep;

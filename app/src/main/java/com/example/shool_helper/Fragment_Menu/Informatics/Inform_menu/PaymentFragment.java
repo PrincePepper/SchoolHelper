@@ -1,4 +1,4 @@
-package com.example.shool_helper.Fragment_Menu.Inform_menu;
+package com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -149,6 +149,7 @@ public class PaymentFragment extends Fragment implements AdapterView.OnItemSelec
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }
+
 }
 
 

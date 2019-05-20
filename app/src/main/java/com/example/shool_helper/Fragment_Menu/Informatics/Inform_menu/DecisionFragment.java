@@ -1,4 +1,4 @@
-package com.example.shool_helper.Fragment_Menu.Inform_menu;
+package com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -16,10 +16,11 @@ import com.example.shool_helper.R;
 
 import java.util.Objects;
 
-import static com.example.shool_helper.Fragment_Menu.Inform_menu.PaymentFragment.*;
-
-
+import static com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu.PaymentFragment.*;
 public class DecisionFragment extends Fragment {
+
+     TextView decision_textView2,decision_textView3,decision_textView4,decision_textView5,decision_textView6,decision_textView7;
+
     @SuppressLint("InflateParams")
     @Nullable
     @Override
@@ -27,17 +28,16 @@ public class DecisionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_decision, null);
     }
 
-
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView decision_textView2= Objects.requireNonNull(getActivity()).findViewById(R.id.decision_textView2);
-        TextView decision_textView3=getActivity().findViewById(R.id.decision_textView3);
-        TextView decision_textView4=getActivity().findViewById(R.id.decision_textView4);
-        TextView decision_textView5=getActivity().findViewById(R.id.decision_textView5);
-        TextView decision_textView6=getActivity().findViewById(R.id.decision_textView6);
-        TextView decision_textView7=getActivity().findViewById(R.id.decision_textView7);
+         decision_textView2= Objects.requireNonNull(getActivity()).findViewById(R.id.decision_textView2);
+         decision_textView3=getActivity().findViewById(R.id.decision_textView3);
+         decision_textView4=getActivity().findViewById(R.id.decision_textView4);
+         decision_textView5=getActivity().findViewById(R.id.decision_textView5);
+         decision_textView6=getActivity().findViewById(R.id.decision_textView6);
+         decision_textView7=getActivity().findViewById(R.id.decision_textView7);
         if(chooseint_1!=10){
             decision_textView2.setText(getString(R.string.will_give)+strnumber+getString(R.string.number_systems)+chooseint_1+getString(R.string.decimal_number_system));
             decision_textView2.setTypeface(null, Typeface.BOLD);

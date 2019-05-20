@@ -1,6 +1,7 @@
-package com.example.shool_helper.Fragment_Menu;
+package com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu;
 
 
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -10,9 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.example.shool_helper.Fragment_Menu.Inform_menu.DecisionFragment;
-import com.example.shool_helper.Fragment_Menu.Inform_menu.PaymentFragment;
+import com.example.shool_helper.NavigationActivity;
 import com.example.shool_helper.R;
 
 import java.util.Objects;
@@ -54,6 +53,9 @@ public class InformFragment extends Fragment {
 
         setPaymentFragment();
 
+        SharedPreferences.Editor ed = NavigationActivity.sPref_fragment.edit();
+        ed.putInt(NavigationActivity.KEY_FRAGMENT, 1);
+        ed.apply();
         return view;
     }
 

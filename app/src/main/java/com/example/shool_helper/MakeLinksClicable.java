@@ -25,6 +25,7 @@ class MakeLinksClicable {
         public void onClick(@NonNull View widget) {
             //Тут можно как-то обработать нажатие на ссылку
             //Сейчас же мы просто открываем браузер с ней
+
             Log.i(LOG, "url clicked: " + this.mUrl);
 
             Intent i = new Intent(Intent.ACTION_VIEW);
@@ -42,7 +43,7 @@ class MakeLinksClicable {
             style.removeSpan(url);
             MakeLinksClicable.CustomerTextClick click = new MakeLinksClicable.CustomerTextClick(url.getURL());
             style.setSpan(click, sp.getSpanStart(url), sp.getSpanEnd(url),
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                          Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
         return style;

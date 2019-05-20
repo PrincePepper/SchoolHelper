@@ -1,4 +1,4 @@
-package com.example.shool_helper.Fragment_Menu.Inform_menu;
+package com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,16 +12,18 @@ import android.view.ViewGroup;
 import com.example.shool_helper.R;
 
 
-public class NullFragment extends Fragment {
+
+public class NetworkCalFragment extends Fragment {
     @SuppressLint("InflateParams")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_null, null);
+        return inflater.inflate(R.layout.fragment_network, null);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
     }
 }
