@@ -152,7 +152,7 @@ public class NavigationActivity extends AppCompatActivity
         if (id == R.id.action_color) {
             //НАСТРОЙКА ФОНА ПРИЛОЖЕНИЯ
             //запись в booleanColor последнего использованного фона
-            booleanColor = sPref.getBoolean(COLORKEY, false);
+            booleanColor = sPref.getBoolean(COLORKEY, true);
             if (color == booleanColor) {
                 color = !color;
             }
@@ -234,7 +234,7 @@ public class NavigationActivity extends AppCompatActivity
 
     private void ThemeChange() {
         sharedPreferences = getSharedPreferences(NAME, Context.MODE_PRIVATE);
-        String stringColor = sharedPreferences.getString(KEY, "c83232");
+        String stringColor = sharedPreferences.getString(KEY, "363636");
         colortheme = Color.parseColor("#" + stringColor);
 
         if (isLightActionBar()) setTheme(R.style.AppTheme);
