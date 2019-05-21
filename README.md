@@ -1,3 +1,5 @@
+![screenshot of sample](https://i.yapx.ru/EJkjZ.png)
+
 SCHOOL HELPER
 =============================
 
@@ -31,4 +33,4 @@ SCHOOL HELPER
       7)Сайт приложения и разработчика PPT.co
       8)Добавить приложение в Google Play
 
-###### Telegram: https://t.me/PrincePepper
+###### ***Telegram:*** https://t.me/PrincePepper
