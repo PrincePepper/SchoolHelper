@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu.InformFragment;
-import com.example.shool_helper.Fragment_Menu.Informatics.Inform_menu.NetworkCalFragment;
 import com.example.shool_helper.NavigationActivity;
 import com.example.shool_helper.R;
 
