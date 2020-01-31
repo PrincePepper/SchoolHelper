@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/splash"
     android:orientation="vertical"
-    tools:context=".About">
+    tools:context="ppts.website.school_helper.About">
 
     <ImageView
         android:id="@+id/imageView5"
