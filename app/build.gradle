@@ -3,7 +3,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "ppts.website.school_helper"
+        applicationId "com.example.shool_helper"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
