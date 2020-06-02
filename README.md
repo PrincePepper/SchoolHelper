@@ -1,36 +1,23 @@
-![screenshot of sample](https://i.yapx.ru/EJkjZ.png)
-
-SCHOOL HELPER
+SCHOOL HELPER [No Longer Support]
 =============================
 
-Спасибо, что выбрали School Helper.
-
-ОПИСАНИЕ
+DESCRIPTION
 ------------
-
-      Смысл очень прост — человек который нуждается в переводе разных систем счисления, или уравнивая химические формулы, или не помнит формулы по физике может воспользоваться данным приложение.
-ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ
+      The meaning is very simple — a person who needs to translate different number systems, or equalizing chemical formulas, or does not remember the formula in physics can use this application.
+FUNCTIONAL FEATURES
 ------------
+<img src="./example.gif" width="33%" height="auto" />
 
-      1) Способность выводить формулы и описания о них;
-      2) дописывать реагенты и проставлять коэффициенты в химии;
-      3) перевод с одной системы счисления в другую;
-      4) нахождения адреса сети;
-         и другое
-ИНТЕРФЕЙС
-------------
-##### Интерфейс будет интуитивно понятным и удобным в обращении, не должно присутствовать лишних кнопок.
+      1) Ability to output formulas and descriptions about them;
+      2) To add reagents and to put the coefficients in chemistry;
+      3) Transfer from one number system to another;
+      4) Finding the network address;
+##### The interface will be intuitive and easy to use, there should be no extra buttons.
+      
+***SAMSUNG IT school project***
 
-ПЛАНИРУЕМЫЙ ФУНКЦИОНАЛ В БУДУЩЕМ
-------------
-
-      1)Сделать химический калькулятор
-      2)Раздел по математике
-      3)Раздел по химии
-      4)Motion и elevation
-      5)работа с базой данных Firebase
-      6)доработать раздел нахождения адреса сети
-      7)Сайт приложения и разработчика PPT.co
-      8)Добавить приложение в Google Play
-
-###### ***Telegram:*** https://t.me/PrincePepper
+##### My contacts:
+1. [Telegram](https://tgmsg.ru/princepepper)
+2. [Вконтакте](https://vk.com/princepepper)
+3. [Instargam](https://www.instagram.com/prince_pepper_official/?hl=ru)
+4. <sereda.wk@gmail.com>
