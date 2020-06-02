@@ -29,8 +29,6 @@ import com.example.shool_helper.Fragment_Menu.InfoFragment;
 import com.example.shool_helper.Fragment_Menu.Informatics.ChangefragmentFragment;
 import com.example.shool_helper.Fragment_Menu.Physics.PhysicsFragment;
 
-import com.example.shool_helper.R;
-
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -65,7 +63,6 @@ public class NavigationActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
 
-
         setTitle("");//мы не устанавливаем имя navigation
 
         ThemeChange();
@@ -73,34 +70,30 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
 
         sPref = getPreferences(MODE_PRIVATE);
-        sPref_fragment =getPreferences(MODE_PRIVATE);
+        sPref_fragment = getPreferences(MODE_PRIVATE);
 
         toolbar = findViewById(R.id.toolbar);
         imageView = findViewById(R.id.imageviewitems);
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-
         setSupportActionBar(toolbar);
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this);
         header = navigationView.getHeaderView(0);
-
-
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if((key_fragment  = sPref_fragment.getInt(KEY_FRAGMENT, 0))==0){
+        if ((key_fragment = sPref_fragment.getInt(KEY_FRAGMENT, 0)) == 0) {
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
             } else {
                 openQuitDialog();
             }
-        } else{
+        } else {
             Fragment fragment = new ChangefragmentFragment();
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();

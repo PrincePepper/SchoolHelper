@@ -12,10 +12,7 @@ import android.widget.ImageView;
 import com.example.shool_helper.Database.Database;
 import com.example.shool_helper.Database.Employees;
 
-import com.example.shool_helper.R;
-
 public class Splash extends AppCompatActivity {
-
     protected static boolean color;
     public static boolean picture;
     Database dataBase;
@@ -23,9 +20,7 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash);
-
         startSplashAmimation();
         initializeDataBase();
         filddatabase();
@@ -34,7 +29,6 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         color = false;
         picture = false;
     }
@@ -74,21 +68,17 @@ public class Splash extends AppCompatActivity {
             dataBase.entityDao().insert(new Employees("сопротивление проводника", "R=ρ∙ℓ/S"));
             dataBase.entityDao().insert(new Employees("закон Ома", " I=U/R"));
             dataBase.entityDao().insert(new Employees("мощность электрического тока", "P=I∙U"));
-
         }
     }
 
     //запуск
-    private  void startSplashAmimation(){
+    private void startSplashAmimation() {
         int SPLASH_DISPLAY = 3000;
         startAnimation();
         new Handler().postDelayed(() -> {
-
             Intent SplashIntent = new Intent(Splash.this, NavigationActivity.class);
             Splash.this.startActivity(SplashIntent);
-
             Splash.this.finish();
-
         }, SPLASH_DISPLAY);
     }
 

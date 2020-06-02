@@ -13,8 +13,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.shool_helper.R;
-
 
 public class About extends AppCompatActivity {
     @Override
@@ -78,6 +76,7 @@ public class About extends AppCompatActivity {
             }
         }
     }
+
     private boolean isActivityStarted(Intent aIntent) {
         try {
             startActivity(aIntent);

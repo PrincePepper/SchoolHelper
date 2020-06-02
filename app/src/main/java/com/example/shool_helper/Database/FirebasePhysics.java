@@ -15,6 +15,10 @@ public class FirebasePhysics extends AppCompatActivity {
     private DatabaseReference myRef;
     private static final String TAG = "myLogs";
 
+    public FirebasePhysics(DatabaseReference myRef) {
+        this.myRef = myRef;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

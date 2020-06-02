@@ -18,13 +18,16 @@ public class Employees {
         this.formula_name = formula_name;
     }
 
-
     public long getId() {
         return this.id;
     }
 
-    public String getFormula() { return this.formula; }
+    public String getFormula() {
+        return this.formula;
+    }
 
-    String getFormula_name() { return this.formula_name; }
+    String getFormula_name() {
+        return this.formula_name;
+    }
 
 }

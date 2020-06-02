@@ -16,7 +16,6 @@ class MakeLinksClicable {
 
     public static class CustomerTextClick extends ClickableSpan {
         String mUrl;
-
         CustomerTextClick(String url) {
             mUrl = url;
         }
@@ -43,7 +42,7 @@ class MakeLinksClicable {
             style.removeSpan(url);
             MakeLinksClicable.CustomerTextClick click = new MakeLinksClicable.CustomerTextClick(url.getURL());
             style.setSpan(click, sp.getSpanStart(url), sp.getSpanEnd(url),
-                          Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
         return style;
